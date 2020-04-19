@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		200FE15D2444A15F00DBA925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FE15C2444A15F00DBA925 /* AppDelegate.swift */; };
 		200FE15F2444A15F00DBA925 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FE15E2444A15F00DBA925 /* SceneDelegate.swift */; };
-		200FE1612444A15F00DBA925 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FE1602444A15F00DBA925 /* WeatherViewController.swift */; };
+		200FE1612444A15F00DBA925 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FE1602444A15F00DBA925 /* ViewController.swift */; };
 		200FE1642444A15F00DBA925 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 200FE1622444A15F00DBA925 /* Main.storyboard */; };
 		200FE1662444A16100DBA925 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200FE1652444A16100DBA925 /* Assets.xcassets */; };
 		200FE1692444A16100DBA925 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 200FE1672444A16100DBA925 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		200FE1592444A15F00DBA925 /* DiscomfortIndexApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscomfortIndexApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		200FE15C2444A15F00DBA925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		200FE15E2444A15F00DBA925 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		200FE1602444A15F00DBA925 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		200FE1602444A15F00DBA925 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		200FE1632444A15F00DBA925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		200FE1652444A16100DBA925 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		200FE1682444A16100DBA925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,37 +58,13 @@
 			children = (
 				200FE15C2444A15F00DBA925 /* AppDelegate.swift */,
 				200FE15E2444A15F00DBA925 /* SceneDelegate.swift */,
-				20780499244C5AD500D24CEE /* Model */,
-				2078049A244C5AED00D24CEE /* View */,
-				2078049B244C5B1D00D24CEE /* Controller */,
+				200FE1602444A15F00DBA925 /* ViewController.swift */,
+				200FE1622444A15F00DBA925 /* Main.storyboard */,
 				200FE1652444A16100DBA925 /* Assets.xcassets */,
 				200FE1672444A16100DBA925 /* LaunchScreen.storyboard */,
 				200FE16A2444A16100DBA925 /* Info.plist */,
 			);
 			path = DiscomfortIndexApp;
-			sourceTree = "<group>";
-		};
-		20780499244C5AD500D24CEE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		2078049A244C5AED00D24CEE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				200FE1622444A15F00DBA925 /* Main.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		2078049B244C5B1D00D24CEE /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				200FE1602444A15F00DBA925 /* WeatherViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				200FE1612444A15F00DBA925 /* WeatherViewController.swift in Sources */,
+				200FE1612444A15F00DBA925 /* ViewController.swift in Sources */,
 				200FE15D2444A15F00DBA925 /* AppDelegate.swift in Sources */,
 				200FE15F2444A15F00DBA925 /* SceneDelegate.swift in Sources */,
 			);
