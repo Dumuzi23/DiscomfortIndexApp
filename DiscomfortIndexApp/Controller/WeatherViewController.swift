@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController , UITextFieldDelegate {
+class ViewController: UIViewController , UITextFieldDelegate, WeatherManagerDelegate {
 
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -17,6 +17,7 @@ class ViewController: UIViewController , UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        weatherManager.delegate = self
         searchTextField.delegate = self
     }
 
@@ -47,5 +48,17 @@ class ViewController: UIViewController , UITextFieldDelegate {
         
         searchTextField.text = ""
     }
+    
+    func didUpdateWeather(weatherManager: WeatherManager, weather: WeatherModel) {
+        print(weather.cityName)
+        print(weather.conditionName)
+        print(weather.tempreture)
+        print(weather.humidity)
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+    
 }
 
