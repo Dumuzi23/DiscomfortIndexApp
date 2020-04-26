@@ -9,7 +9,7 @@
 import Foundation
 
 struct WeatherManager {
-    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=[apiKey]&units=metric"
+    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=[apiKey]]&units=metric"
     
     func fetchWeather(cityName: String) {
         let urlString = "\(weatherURL)&q=\(cityName)"
@@ -37,34 +37,18 @@ struct WeatherManager {
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             let id = decodedData.weather[0].id
-            print(decodedData.name)
-            print(decodedData.weather[0].description)
-            print(decodedData.main.temp)
-            print(decodedData.main.humidity)
-            print(getConditionName(weatherId: id))
+            let name = decodedData.name
+            let temp = decodedData.main.temp
+            let humid = decodedData.main.humidity
+            
+            let weather = WeatherModel(conditionId: id, cityName: name, tempreture: temp, humidity: humid)
+            
+            print(weather.cityName)
+            print(weather.conditionName)
+            print(weather.tempreture)
+            print(weather.humidity)
         } catch {
             print(error)
-        }
-    }
-    
-    func getConditionName(weatherId: Int) -> String {
-        switch weatherId {
-        case 200...232:
-            return "cloud.bolt"
-        case 300...321:
-            return "cloud.drizzle"
-        case 500...531:
-            return "cloud.rain"
-        case 600...622:
-            return "cloud.snow"
-        case 701...781:
-            return "cloud.fog"
-        case 800:
-            return "sun.max"
-        case 801...804:
-            return "cloud.bolt"
-        default:
-            return "cloud"
         }
     }
     
