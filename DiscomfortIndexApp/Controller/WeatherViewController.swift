@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController , UITextFieldDelegate, WeatherManagerDelegate {
+class WeatherViewController: UIViewController , UITextFieldDelegate, WeatherManagerDelegate {
 
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var cityLabel: UILabel!
