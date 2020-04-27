@@ -11,6 +11,11 @@ import UIKit
 class ViewController: UIViewController , UITextFieldDelegate, WeatherManagerDelegate {
 
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var conditionImageView: UIImageView!
+    @IBOutlet weak var discomfortIndexImageView: UIImageView!
     
     var weatherManager = WeatherManager()
     
