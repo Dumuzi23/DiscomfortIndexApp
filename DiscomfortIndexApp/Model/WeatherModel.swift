@@ -11,8 +11,16 @@ import Foundation
 struct WeatherModel {
     let conditionId: Int
     let cityName: String
-    let tempreture: Double
+    let temperature: Double
     let humidity: Int
+    
+    var temperatureString: String {
+        return String(format: "%.1f", temperature)
+    }
+    
+    var humidityString: String {
+        return String(humidity)
+    }
     
     var conditionName: String {
         switch conditionId {

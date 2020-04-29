@@ -50,7 +50,7 @@ struct WeatherManager {
             let temp = decodedData.main.temp
             let humid = decodedData.main.humidity
             
-            let weather = WeatherModel(conditionId: id, cityName: name, tempreture: temp, humidity: humid)
+            let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp, humidity: humid)
             
             return weather
         } catch {
