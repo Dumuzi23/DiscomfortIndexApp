@@ -58,6 +58,7 @@ class WeatherViewController: UIViewController , UITextFieldDelegate, WeatherMana
         DispatchQueue.main.async {
             self.cityLabel.text = weather.cityName
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+            self.discomfortIndexImageView.image = UIImage(named: weather.discomfortIndexName)
             self.temperatureLabel.text = weather.temperatureString
             self.humidityLabel.text = weather.humidityString
         }
