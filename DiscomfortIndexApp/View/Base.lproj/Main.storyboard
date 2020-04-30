@@ -18,7 +18,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="FD4-Cg-P7U">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="EE4-YQ-8EA">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EE4-YQ-8EA">
                                 <rect key="frame" x="20" y="49" width="374" height="813"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Kp-zS-N5X">
@@ -54,13 +54,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tokyo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV7-M3-mmU">
-                                        <rect key="frame" x="293.5" y="72" width="80.5" height="35"/>
+                                        <rect key="frame" x="293.5" y="70" width="80.5" height="35"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mLR-qJ-UYR">
-                                        <rect key="frame" x="195" y="129" width="179" height="84"/>
+                                        <rect key="frame" x="195" y="125" width="179" height="84"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PtB-UC-NBF">
                                                 <rect key="frame" x="0.0" y="0.0" width="89.5" height="84"/>
@@ -77,7 +77,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bKn-U3-ymJ">
-                                        <rect key="frame" x="254.5" y="235" width="119.5" height="60"/>
+                                        <rect key="frame" x="254.5" y="229" width="119.5" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2j-sZ-Fck">
                                                 <rect key="frame" x="0.0" y="0.0" width="67.5" height="60"/>
@@ -94,7 +94,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="uuE-hO-bhq">
-                                        <rect key="frame" x="192" y="317" width="182" height="80"/>
+                                        <rect key="frame" x="207" y="309" width="167" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rhY-ix-f8A">
                                                 <rect key="frame" x="0.0" y="2.5" width="80" height="75"/>
@@ -104,17 +104,17 @@
                                                     <constraint firstAttribute="width" constant="80" id="SO0-mZ-n7I"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rD6-xY-gnD">
-                                                <rect key="frame" x="102" y="2.5" width="80" height="75.5"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="normal" translatesAutoresizingMaskIntoConstraints="NO" id="rD6-xY-gnD">
+                                                <rect key="frame" x="102" y="0.0" width="65" height="80"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="NlX-Ri-I0M"/>
+                                                    <constraint firstAttribute="width" constant="65" id="NlX-Ri-I0M"/>
                                                     <constraint firstAttribute="height" constant="80" id="XPY-fm-4qG"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INQ-pN-X4p">
-                                        <rect key="frame" x="134" y="419" width="240" height="394"/>
+                                        <rect key="frame" x="134" y="409" width="240" height="404"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -155,6 +155,6 @@
         <image name="cloud" catalog="system" width="128" height="87"/>
         <image name="location.fill" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="normal" width="224.5" height="224.5"/>
     </resources>
 </document>
