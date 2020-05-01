@@ -20,7 +20,7 @@ class WeatherViewController: UIViewController , UITextFieldDelegate, WeatherMana
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("fetch")
         weatherManager.delegate = self
         searchTextField.delegate = self
     }
