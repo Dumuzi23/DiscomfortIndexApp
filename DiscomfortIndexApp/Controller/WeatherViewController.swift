@@ -13,7 +13,6 @@ class WeatherViewController: UIViewController , UITextFieldDelegate, WeatherMana
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var discomfortIndexImageView: UIImageView!
     
@@ -60,7 +59,6 @@ class WeatherViewController: UIViewController , UITextFieldDelegate, WeatherMana
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
             self.discomfortIndexImageView.image = UIImage(named: weather.discomfortIndexName)
             self.temperatureLabel.text = weather.temperatureString
-            self.humidityLabel.text = weather.humidityString
         }
     }
     
