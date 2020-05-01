@@ -18,10 +18,6 @@ struct WeatherModel {
         return String(format: "%.1f", temperature)
     }
     
-    var humidityString: String {
-        return String(humidity)
-    }
-    
     var discomfortIndexName: String {
         let di = 0.81 * temperature + 0.01 * Double(humidity) * (0.99 * temperature - 14.3) + 46.3
         
