@@ -15,11 +15,15 @@ protocol WeatherManagerDelegate {
 
 struct WeatherManager {
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=[apiKey]&units=metric"
+    let forecastURL = "https://api.openweathermap.org/data/2.5/forecast/dayly?appid=[apiKey]&units=metric&cnt=2"
+    
+    var isCurrentWeather = false
     
     var delegate: WeatherManagerDelegate?
     
     func fetchWeather(cityName: String) {
         let urlString = "\(weatherURL)&q=\(cityName)"
+        
         performRequest(with: urlString)
     }
     
@@ -32,8 +36,12 @@ struct WeatherManager {
                     return
                 }
                 if let safeData = data {
-                    if let weather = self.parseJSON(weatherData: safeData) {
-                        self.delegate?.didUpdateWeather(weatherManager: self, weather: weather)
+                    if self.isCurrentWeather {
+                        if let weather = self.parseJSONforCurrentWeather(weatherData: safeData) {
+                            self.delegate?.didUpdateWeather(weatherManager: self, weather: weather)
+                        }
+                    } else {
+                        print(urlString)
                     }
                 }
             }
@@ -41,7 +49,7 @@ struct WeatherManager {
         }
     }
     
-    func parseJSON(weatherData: Data) -> WeatherModel? {
+    func parseJSONforCurrentWeather(weatherData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
