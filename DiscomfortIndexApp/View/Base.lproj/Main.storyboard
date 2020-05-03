@@ -142,7 +142,7 @@
         <!--Forecast View Controller-->
         <scene sceneID="5Mf-Ee-rNc">
             <objects>
-                <viewController storyboardIdentifier="3daysWeatherView" id="mQ4-6E-4Oe" customClass="ForecastViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="3daysWeatherView" id="mQ4-6E-4Oe" customClass="ForecastViewController" customModule="DiscomfortIndexApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G0C-Sh-BWb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,7 +168,7 @@
                                                         <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <state key="normal" backgroundImage="location.fill" catalog="system"/>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zyD-b0-uCN">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zyD-b0-uCN" userLabel="Search Text Field">
                                                         <rect key="frame" x="70" y="0.0" width="234" height="50"/>
                                                         <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -439,6 +439,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e6a-Ft-hiE"/>
                     </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="zyD-b0-uCN" id="m2C-A4-Ztq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3s-dR-eKe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

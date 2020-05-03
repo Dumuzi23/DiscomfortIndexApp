@@ -20,7 +20,6 @@ class WeatherViewController: UIViewController , UITextFieldDelegate, WeatherMana
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("fetch")
         weatherManager.delegate = self
         searchTextField.delegate = self
     }
@@ -47,6 +46,7 @@ class WeatherViewController: UIViewController , UITextFieldDelegate, WeatherMana
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let city = searchTextField.text {
+            weatherManager.isCurrentWeather = true
             weatherManager.fetchWeather(cityName: city)
         }
         
