@@ -14,7 +14,7 @@ protocol WeatherManagerDelegate {
 }
 
 struct WeatherManager {
-    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=[apiKey]&units=metric"
+    let weatherURL = "https://api.weatherapi.com/v1/current.json?key=5bfc56bbb0cd4ced8ca50553200505"
     
     var isCurrentWeather = false
     
@@ -25,7 +25,7 @@ struct WeatherManager {
         
         // isCurrentWeatherがfalseのとき（ForecastViewControllerから気象情報を要求されたとき）、urlStringを天気予報用に書き換えます。
         if !isCurrentWeather {
-            urlString = "https://api.openweathermap.org/data/2.5/forecast/dayly?appid=[apiKey]&units=metric&cnt=2&q=\(cityName)"
+            urlString = "https://api.weatherapi.com/v1/forecast.json?key=5bfc56bbb0cd4ced8ca50553200505&days=2&q=\(cityName)"
             print(urlString)
         }
         
@@ -60,12 +60,12 @@ struct WeatherManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
-            let id = decodedData.weather[0].id
-            let name = decodedData.name
-            let temp = decodedData.main.temp
-            let humid = decodedData.main.humidity
+            let id = decodedData.current.condition.code
+            let name = decodedData.location.name
+            let temp = decodedData.current.temp_c
+            let humid = decodedData.current.humidity
             
-            let weather = WeatherModel(conditionId: id, cityName: name, currentTemperature: temp, maxTemperature: 0.0, minTemperature: 0.0, dayTemperature: 0.0, humidity: humid)
+            let weather = WeatherModel(conditionId: id, cityName: name, currentTemperature: temp, maxTemperature: 0.0, minTemperature: 0.0, avgTemperature: 0.0, humidity: humid)
             
             return weather
         } catch {
@@ -78,14 +78,14 @@ struct WeatherManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ForecastData.self, from: forecastData)
-            let id = decodedData.list[0].weather[0].id
-            let name = decodedData.city.name
-            let maxTemp = decodedData.list[0].temp.max
-            let minTemp = decodedData.list[0].temp.min
-            let dayTemp = decodedData.list[0].temp.day
-            let humid = decodedData.list[0].humidity
+            let id = decodedData.forecast.forecastday[0].day.condition.code
+            let name = decodedData.location.name
+            let maxTemp = decodedData.forecast.forecastday[0].day.maxtemp_c
+            let minTemp = decodedData.forecast.forecastday[0].day.mintemp_c
+            let avgTemp = decodedData.forecast.forecastday[0].day.avgtemp_c
+            let humid = decodedData.forecast.forecastday[0].day.avghumidity
             
-            let weather = WeatherModel(conditionId: id, cityName: name, currentTemperature: 0.0, maxTemperature: maxTemp, minTemperature: minTemp, dayTemperature: dayTemp, humidity: humid)
+            let weather = WeatherModel(conditionId: id, cityName: name, currentTemperature: 0.0, maxTemperature: maxTemp, minTemperature: minTemp, avgTemperature: avgTemp, humidity: Int(humid))
             
             return weather
         } catch {

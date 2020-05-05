@@ -9,17 +9,20 @@
 import Foundation
 
 struct WeatherData: Decodable {
+    let location: Location
+    let current: Current
+}
+
+struct Location: Decodable {
     let name: String
-    let main: Main
-    let weather: [Weather]
 }
 
-struct Main: Decodable {
-    let temp: Double
+struct Current: Decodable {
+    let temp_c: Double
     let humidity: Int
+    let condition: Condition
 }
 
-struct Weather: Decodable {
-    let description: String
-    let id: Int
+struct Condition: Decodable {
+    let code: Int
 }
