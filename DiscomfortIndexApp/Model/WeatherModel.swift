@@ -11,15 +11,18 @@ import Foundation
 struct WeatherModel {
     let conditionId: Int
     let cityName: String
-    let temperature: Double
+    let currentTemperature: Double
+    let maxTemperature: Double
+    let minTemperature: Double
+    let dayTemperature: Double
     let humidity: Int
     
     var temperatureString: String {
-        return String(format: "%.1f", temperature)
+        return String(format: "%.1f", currentTemperature)
     }
     
     var discomfortIndexName: String {
-        let di = 0.81 * temperature + 0.01 * Double(humidity) * (0.99 * temperature - 14.3) + 46.3
+        let di = 0.81 * currentTemperature + 0.01 * Double(humidity) * (0.99 * currentTemperature - 14.3) + 46.3
         
         switch di {
         case ..<55:
