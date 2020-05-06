@@ -49,7 +49,7 @@ class ForecastViewController: UIViewController, UITextFieldDelegate, WeatherMana
         print(weather.cityName)
         print(weather.maxTemperature)
         print(weather.minTemperature)
-        print(weather.dayTemperature)
+        print(weather.avgTemperature)
         print(weather.conditionId)
     }
     

@@ -9,27 +9,32 @@
 import Foundation
 
 struct ForecastData: Decodable {
-    let city: City
-    let list: [List]
+    let location: LocationForForecast
+    let forecast: Forecast
 }
 
-struct City: Decodable {
+struct LocationForForecast: Decodable {
     let name: String
 }
 
-struct List: Decodable {
-    let dt: Int
-    let temp: Temp
-    let humidity: Int
-    let weather: [Weather2]
+struct Forecast: Decodable {
+    let forecastday: [Forecastday]
 }
 
-struct Temp: Decodable {
-    let max: Double
-    let min: Double
-    let day: Double
+struct Forecastday: Decodable {
+    let date: String
+    let day: Day
+   
 }
 
-struct Weather2: Decodable {
-    let id: Int
+struct Day: Decodable {
+    let maxtemp_c: Double
+    let mintemp_c: Double
+    let avgtemp_c: Double
+    let avghumidity: Double
+    let condition: ConditionForForcast
+}
+
+struct ConditionForForcast: Decodable {
+    let code: Int
 }
