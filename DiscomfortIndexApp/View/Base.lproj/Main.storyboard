@@ -440,6 +440,12 @@
                         <viewLayoutGuide key="safeArea" id="e6a-Ft-hiE"/>
                     </view>
                     <connections>
+                        <outlet property="cityLabel" destination="dbu-gT-kdg" id="Rh7-IG-y7p"/>
+                        <outlet property="firstConditionImageView" destination="lB3-ZN-KkZ" id="EVx-KZ-64X"/>
+                        <outlet property="firstDayLabel" destination="Ng1-hn-H7x" id="kjo-Jm-opX"/>
+                        <outlet property="firstDiscomfortIndexImageView" destination="3NW-b0-DWS" id="GNY-jU-LPO"/>
+                        <outlet property="firstMaxTemperatureLabel" destination="lJc-zI-3DL" id="g2d-r7-S8I"/>
+                        <outlet property="firstMinTemperatureLabel" destination="e1F-nL-oD1" id="NiU-4C-1qk"/>
                         <outlet property="searchTextField" destination="zyD-b0-uCN" id="m2C-A4-Ztq"/>
                     </connections>
                 </viewController>

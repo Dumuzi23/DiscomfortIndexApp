@@ -11,11 +11,18 @@ import Foundation
 struct WeatherModel {
     let conditionId: Int
     let cityName: String
+    let date: String
     let currentTemperature: Double
     let maxTemperature: Double
     let minTemperature: Double
     let avgTemperature: Double
     let humidity: Int
+    
+    var formattedDate: String {
+        let dateArray = date.components(separatedBy: "-")
+        
+        return String(format: "%@/%@", dateArray[1], dateArray[2])
+    }
     
     var temperatureString: String {
         return String(format: "%.1f", currentTemperature)
