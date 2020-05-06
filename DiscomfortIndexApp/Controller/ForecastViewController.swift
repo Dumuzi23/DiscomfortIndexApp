@@ -11,7 +11,13 @@ import UIKit
 class ForecastViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
     
     @IBOutlet weak var searchTextField: UITextField!
-
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var firstDayLabel: UILabel!
+    @IBOutlet weak var firstMaxTemperatureLabel: UILabel!
+    @IBOutlet weak var firstMinTemperatureLabel: UILabel!
+    @IBOutlet weak var firstConditionImageView: UIImageView!
+    @IBOutlet weak var firstDiscomfortIndexImageView: UIImageView!
+    
     var weatherManager = WeatherManager()
     
     override func viewDidLoad() {
@@ -46,11 +52,13 @@ class ForecastViewController: UIViewController, UITextFieldDelegate, WeatherMana
     }
     
     func didUpdateWeather(weatherManager: WeatherManager, weather: WeatherModel) {
-        print(weather.cityName)
-        print(weather.maxTemperature)
-        print(weather.minTemperature)
-        print(weather.avgTemperature)
-        print(weather.conditionId)
+        DispatchQueue.main.async {
+            self.cityLabel.text = weather.cityName
+            self.firstDayLabel.text = weather.formattedDate
+            self.firstMaxTemperatureLabel.text = String(weather.maxTemperature)
+            self.firstMinTemperatureLabel.text = String(weather.minTemperature)
+            self.firstConditionImageView.image = UIImage(systemName: weather.conditionName)
+        }
     }
     
     func didFailWithError(error: Error) {
