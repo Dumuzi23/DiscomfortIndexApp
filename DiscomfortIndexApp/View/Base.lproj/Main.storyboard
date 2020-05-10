@@ -184,6 +184,7 @@
                                                         <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
                                                         <connections>
                                                             <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cFW-IS-qEk"/>
+                                                            <action selector="searchButtonPressed:" destination="mQ4-6E-4Oe" eventType="touchUpInside" id="hCw-sS-b5e"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

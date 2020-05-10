@@ -35,6 +35,10 @@ class ForecastViewController: UIViewController {
 
 extension ForecastViewController: UITextFieldDelegate {
     
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+        searchTextField.endEditing(true)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
         
