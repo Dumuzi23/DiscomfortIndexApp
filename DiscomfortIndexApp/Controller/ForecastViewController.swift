@@ -17,6 +17,11 @@ class ForecastViewController: UIViewController, UITextFieldDelegate, ForecastMan
     @IBOutlet weak var firstMinTemperatureLabel: UILabel!
     @IBOutlet weak var firstConditionImageView: UIImageView!
     @IBOutlet weak var firstDiscomfortIndexImageView: UIImageView!
+    @IBOutlet weak var secondDayLabel: UILabel!
+    @IBOutlet weak var secondMaxTemperatureLabel: UILabel!
+    @IBOutlet weak var secondMinTemperatureLabel: UILabel!
+    @IBOutlet weak var secondConditionImageView: UIImageView!
+    @IBOutlet weak var secondDiscomfortIndexImageView: UIImageView!
     
     var forecastManager = ForecastManager()
     
@@ -57,6 +62,12 @@ class ForecastViewController: UIViewController, UITextFieldDelegate, ForecastMan
             self.firstMaxTemperatureLabel.text = String(firstWeather.maxTemperature)
             self.firstMinTemperatureLabel.text = String(firstWeather.minTemperature)
             self.firstConditionImageView.image = UIImage(systemName: firstWeather.conditionName)
+            self.firstDiscomfortIndexImageView.image = UIImage(named: firstWeather.discomfortIndexName)
+            self.secondDayLabel.text = secondWeather.formattedDate
+            self.secondMaxTemperatureLabel.text = String(secondWeather.maxTemperature)
+            self.secondMinTemperatureLabel.text = String(secondWeather.minTemperature)
+            self.secondConditionImageView.image = UIImage(systemName: secondWeather.conditionName)
+            self.secondDiscomfortIndexImageView.image = UIImage(named: secondWeather.discomfortIndexName)
         }
     }
     

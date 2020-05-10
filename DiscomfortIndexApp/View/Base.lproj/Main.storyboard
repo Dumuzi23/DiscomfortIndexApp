@@ -447,6 +447,11 @@
                         <outlet property="firstMaxTemperatureLabel" destination="lJc-zI-3DL" id="g2d-r7-S8I"/>
                         <outlet property="firstMinTemperatureLabel" destination="e1F-nL-oD1" id="NiU-4C-1qk"/>
                         <outlet property="searchTextField" destination="zyD-b0-uCN" id="m2C-A4-Ztq"/>
+                        <outlet property="secondConditionImageView" destination="CSC-AP-Z2B" id="9gm-ID-oeJ"/>
+                        <outlet property="secondDayLabel" destination="itW-r6-w4d" id="EE2-ev-iWg"/>
+                        <outlet property="secondDiscomfortIndexImageView" destination="n3q-Ex-OnB" id="foC-TL-nfx"/>
+                        <outlet property="secondMaxTemperatureLabel" destination="9Vg-cQ-Jjd" id="DLu-7F-TwC"/>
+                        <outlet property="secondMinTemperatureLabel" destination="YkX-KM-Gda" id="P71-t8-ZKG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3s-dR-eKe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
