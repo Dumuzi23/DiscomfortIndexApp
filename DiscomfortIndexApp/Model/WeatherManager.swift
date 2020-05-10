@@ -16,18 +16,10 @@ protocol WeatherManagerDelegate {
 struct WeatherManager {
     let weatherURL = "https://api.weatherapi.com/v1/current.json?key=[apiKey]"
     
-    var isCurrentWeather = false
-    
     var delegate: WeatherManagerDelegate?
     
     func fetchWeather(cityName: String) {
-        var urlString = "\(weatherURL)&q=\(cityName)"
-        
-        // isCurrentWeatherがfalseのとき（ForecastViewControllerから気象情報を要求されたとき）、urlStringを天気予報用に書き換えます。
-        if !isCurrentWeather {
-            urlString = "https://api.weatherapi.com/v1/forecast.json?key=[apiKey]&days=2&q=\(cityName)"
-            print(urlString)
-        }
+        let urlString = "\(weatherURL)&q=\(cityName)"
         
         performRequest(with: urlString)
     }
@@ -41,14 +33,8 @@ struct WeatherManager {
                     return
                 }
                 if let safeData = data {
-                    if self.isCurrentWeather {
-                        if let weather = self.parseJSONforCurrentWeather(weatherData: safeData) {
-                            self.delegate?.didUpdateWeather(weatherManager: self, weather: weather)
-                        }
-                    } else {
-                        if let weather  = self.parseJSONforForecast(forecastData: safeData) {
-                            self.delegate?.didUpdateWeather(weatherManager: self, weather: weather)
-                        }
+                    if let weather = self.parseJSONforWeather(weatherData: safeData) {
+                        self.delegate?.didUpdateWeather(weatherManager: self, weather: weather)
                     }
                 }
             }
@@ -56,7 +42,7 @@ struct WeatherManager {
         }
     }
     
-    func parseJSONforCurrentWeather(weatherData: Data) -> WeatherModel? {
+    func parseJSONforWeather(weatherData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
@@ -66,27 +52,6 @@ struct WeatherManager {
             let humid = decodedData.current.humidity
             
             let weather = WeatherModel(conditionId: id, cityName: name, date:"0",currentTemperature: temp, maxTemperature: 0.0, minTemperature: 0.0, avgTemperature: 0.0, humidity: humid)
-            
-            return weather
-        } catch {
-            delegate?.didFailWithError(error: error)
-            return nil
-        }
-    }
-    
-    func parseJSONforForecast(forecastData: Data) -> WeatherModel? {
-        let decoder = JSONDecoder()
-        do {
-            let decodedData = try decoder.decode(ForecastData.self, from: forecastData)
-            let id = decodedData.forecast.forecastday[1].day.condition.code
-            let name = decodedData.location.name
-            let date = decodedData.forecast.forecastday[1].date
-            let maxTemp = decodedData.forecast.forecastday[1].day.maxtemp_c
-            let minTemp = decodedData.forecast.forecastday[1].day.mintemp_c
-            let avgTemp = decodedData.forecast.forecastday[1].day.avgtemp_c
-            let humid = decodedData.forecast.forecastday[1].day.avghumidity
-            
-            let weather = WeatherModel(conditionId: id, cityName: name, date: date, currentTemperature: 0.0, maxTemperature: maxTemp, minTemperature: minTemp, avgTemperature: avgTemp, humidity: Int(humid))
             
             return weather
         } catch {
