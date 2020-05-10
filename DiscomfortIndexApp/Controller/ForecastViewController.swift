@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForecastViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
+class ForecastViewController: UIViewController, UITextFieldDelegate, ForecastManagerDelegate {
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var cityLabel: UILabel!
@@ -18,11 +18,11 @@ class ForecastViewController: UIViewController, UITextFieldDelegate, WeatherMana
     @IBOutlet weak var firstConditionImageView: UIImageView!
     @IBOutlet weak var firstDiscomfortIndexImageView: UIImageView!
     
-    var weatherManager = WeatherManager()
+    var forecastManager = ForecastManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        weatherManager.delegate = self
+        forecastManager.delegate = self
         searchTextField.delegate = self
     }
     
@@ -44,20 +44,19 @@ class ForecastViewController: UIViewController, UITextFieldDelegate, WeatherMana
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let city = searchTextField.text {
-            weatherManager.isCurrentWeather = false
-            weatherManager.fetchWeather(cityName: city)
+            forecastManager.fetchForecast(cityName: city)
         }
         
         searchTextField.text = ""
     }
     
-    func didUpdateWeather(weatherManager: WeatherManager, weather: WeatherModel) {
+    func didUpdateForecast(weatherManager: ForecastManager, firstWeather: WeatherModel, secondWeather: WeatherModel) {
         DispatchQueue.main.async {
-            self.cityLabel.text = weather.cityName
-            self.firstDayLabel.text = weather.formattedDate
-            self.firstMaxTemperatureLabel.text = String(weather.maxTemperature)
-            self.firstMinTemperatureLabel.text = String(weather.minTemperature)
-            self.firstConditionImageView.image = UIImage(systemName: weather.conditionName)
+            self.cityLabel.text = firstWeather.cityName
+            self.firstDayLabel.text = firstWeather.formattedDate
+            self.firstMaxTemperatureLabel.text = String(firstWeather.maxTemperature)
+            self.firstMinTemperatureLabel.text = String(firstWeather.minTemperature)
+            self.firstConditionImageView.image = UIImage(systemName: firstWeather.conditionName)
         }
     }
     
