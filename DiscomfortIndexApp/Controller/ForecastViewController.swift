@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ForecastViewController: UIViewController {
     
@@ -24,13 +25,22 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var secondDiscomfortIndexImageView: UIImageView!
     
     var forecastManager = ForecastManager()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        
         forecastManager.delegate = self
         searchTextField.delegate = self
     }
     
+    @IBAction func locationPressed(_ sender: UIButton) {
+        locationManager.requestLocation()
+    }
 }
 
 extension ForecastViewController: UITextFieldDelegate {
@@ -85,4 +95,18 @@ extension ForecastViewController: ForecastManagerDelegate {
        func didFailWithError(error: Error) {
            print(error)
        }
+}
+
+extension ForecastViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            let lat = location.coordinate.latitude
+            let lon = location.coordinate.longitude
+            forecastManager.fetchForecast(latitude: lat, longtude: lon)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
 }
