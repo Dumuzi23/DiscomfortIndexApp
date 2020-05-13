@@ -15,18 +15,19 @@ protocol ForecastManagerDelegate {
 }
 
 struct ForecastManager {
-    let weatherURL = "https://api.weatherapi.com/v1/forecast.json?key=[apiKey]&days=3"
-    
+    let weatherURL = "https://api.weatherapi.com/v1/forecast.json?days=3&"
+    let apiKey = APIKey()
+
     var delegate: ForecastManagerDelegate?
     
     func fetchForecast(cityName: String) {
-        let urlString = "\(weatherURL)&q=\(cityName)"
+        let urlString = "\(weatherURL)key=\(apiKey.key)&q=\(cityName)"
         
         performRequest(with: urlString)
     }
     
     func fetchForecast(latitude: CLLocationDegrees, longtude: CLLocationDegrees) {
-        let urlString = "\(weatherURL)&q=\(latitude),\(longtude)"
+        let urlString = "\(weatherURL)key=\(apiKey.key)&q=\(latitude),\(longtude)"
         
         performRequest(with: urlString)
     }
