@@ -39,7 +39,7 @@ struct WeatherModel {
         case 60..<65:
             return "normal"
         case 65..<70:
-            return "confort"
+            return "comfort"
         case 70..<75:
             return "normal"
         case 75..<80:
