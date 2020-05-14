@@ -18,10 +18,29 @@
 		207804A324555ECC00D24CEE /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207804A224555ECC00D24CEE /* WeatherModel.swift */; };
 		209CE3A02465996E009D1EC1 /* ForecastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CE39F2465996E009D1EC1 /* ForecastManager.swift */; };
 		209CE3A2246BFD56009D1EC1 /* APIkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CE3A1246BFD56009D1EC1 /* APIkey.swift */; };
+		209CE3AA246D4E2F009D1EC1 /* DiscomfortIndexAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CE3A9246D4E2F009D1EC1 /* DiscomfortIndexAppTests.swift */; };
+		209CE3B8246D4E7F009D1EC1 /* DiscomfortIndexAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CE3B7246D4E7F009D1EC1 /* DiscomfortIndexAppUITests.swift */; };
 		20B5A552245C28320036776B /* PageVireController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5A551245C28320036776B /* PageVireController.swift */; };
 		20B5A554245E541F0036776B /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5A553245E541E0036776B /* ForecastViewController.swift */; };
 		20B5A558245F856D0036776B /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5A557245F856D0036776B /* ForecastData.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		209CE3AC246D4E2F009D1EC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 200FE1512444A15F00DBA925 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 200FE1582444A15F00DBA925;
+			remoteInfo = DiscomfortIndexApp;
+		};
+		209CE3BA246D4E7F009D1EC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 200FE1512444A15F00DBA925 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 200FE1582444A15F00DBA925;
+			remoteInfo = DiscomfortIndexApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		200FE1592444A15F00DBA925 /* DiscomfortIndexApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscomfortIndexApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +56,12 @@
 		207804A224555ECC00D24CEE /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		209CE39F2465996E009D1EC1 /* ForecastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastManager.swift; sourceTree = "<group>"; };
 		209CE3A1246BFD56009D1EC1 /* APIkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIkey.swift; sourceTree = "<group>"; };
+		209CE3A7246D4E2F009D1EC1 /* DiscomfortIndexAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscomfortIndexAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		209CE3A9246D4E2F009D1EC1 /* DiscomfortIndexAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscomfortIndexAppTests.swift; sourceTree = "<group>"; };
+		209CE3AB246D4E2F009D1EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		209CE3B5246D4E7F009D1EC1 /* DiscomfortIndexAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscomfortIndexAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		209CE3B7246D4E7F009D1EC1 /* DiscomfortIndexAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscomfortIndexAppUITests.swift; sourceTree = "<group>"; };
+		209CE3B9246D4E7F009D1EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20B5A551245C28320036776B /* PageVireController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVireController.swift; sourceTree = "<group>"; };
 		20B5A553245E541E0036776B /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		20B5A557245F856D0036776B /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
@@ -50,6 +75,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		209CE3A4246D4E2F009D1EC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		209CE3B2246D4E7F009D1EC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				200FE15B2444A15F00DBA925 /* DiscomfortIndexApp */,
+				209CE3A8246D4E2F009D1EC1 /* DiscomfortIndexAppTests */,
+				209CE3B6246D4E7F009D1EC1 /* DiscomfortIndexAppUITests */,
 				200FE15A2444A15F00DBA925 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				200FE1592444A15F00DBA925 /* DiscomfortIndexApp.app */,
+				209CE3A7246D4E2F009D1EC1 /* DiscomfortIndexAppTests.xctest */,
+				209CE3B5246D4E7F009D1EC1 /* DiscomfortIndexAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +158,24 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		209CE3A8246D4E2F009D1EC1 /* DiscomfortIndexAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				209CE3A9246D4E2F009D1EC1 /* DiscomfortIndexAppTests.swift */,
+				209CE3AB246D4E2F009D1EC1 /* Info.plist */,
+			);
+			path = DiscomfortIndexAppTests;
+			sourceTree = "<group>";
+		};
+		209CE3B6246D4E7F009D1EC1 /* DiscomfortIndexAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				209CE3B7246D4E7F009D1EC1 /* DiscomfortIndexAppUITests.swift */,
+				209CE3B9246D4E7F009D1EC1 /* Info.plist */,
+			);
+			path = DiscomfortIndexAppUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +196,42 @@
 			productReference = 200FE1592444A15F00DBA925 /* DiscomfortIndexApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		209CE3A6246D4E2F009D1EC1 /* DiscomfortIndexAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 209CE3B0246D4E2F009D1EC1 /* Build configuration list for PBXNativeTarget "DiscomfortIndexAppTests" */;
+			buildPhases = (
+				209CE3A3246D4E2F009D1EC1 /* Sources */,
+				209CE3A4246D4E2F009D1EC1 /* Frameworks */,
+				209CE3A5246D4E2F009D1EC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				209CE3AD246D4E2F009D1EC1 /* PBXTargetDependency */,
+			);
+			name = DiscomfortIndexAppTests;
+			productName = DiscomfortIndexAppTests;
+			productReference = 209CE3A7246D4E2F009D1EC1 /* DiscomfortIndexAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		209CE3B4246D4E7F009D1EC1 /* DiscomfortIndexAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 209CE3BC246D4E7F009D1EC1 /* Build configuration list for PBXNativeTarget "DiscomfortIndexAppUITests" */;
+			buildPhases = (
+				209CE3B1246D4E7F009D1EC1 /* Sources */,
+				209CE3B2246D4E7F009D1EC1 /* Frameworks */,
+				209CE3B3246D4E7F009D1EC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				209CE3BB246D4E7F009D1EC1 /* PBXTargetDependency */,
+			);
+			name = DiscomfortIndexAppUITests;
+			productName = DiscomfortIndexAppUITests;
+			productReference = 209CE3B5246D4E7F009D1EC1 /* DiscomfortIndexAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -147,6 +244,14 @@
 				TargetAttributes = {
 					200FE1582444A15F00DBA925 = {
 						CreatedOnToolsVersion = 11.4;
+					};
+					209CE3A6246D4E2F009D1EC1 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 200FE1582444A15F00DBA925;
+					};
+					209CE3B4246D4E7F009D1EC1 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 200FE1582444A15F00DBA925;
 					};
 				};
 			};
@@ -164,6 +269,8 @@
 			projectRoot = "";
 			targets = (
 				200FE1582444A15F00DBA925 /* DiscomfortIndexApp */,
+				209CE3A6246D4E2F009D1EC1 /* DiscomfortIndexAppTests */,
+				209CE3B4246D4E7F009D1EC1 /* DiscomfortIndexAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -176,6 +283,20 @@
 				200FE1692444A16100DBA925 /* LaunchScreen.storyboard in Resources */,
 				200FE1662444A16100DBA925 /* Assets.xcassets in Resources */,
 				200FE1642444A15F00DBA925 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		209CE3A5246D4E2F009D1EC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		209CE3B3246D4E7F009D1EC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +321,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		209CE3A3246D4E2F009D1EC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				209CE3AA246D4E2F009D1EC1 /* DiscomfortIndexAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		209CE3B1246D4E7F009D1EC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				209CE3B8246D4E7F009D1EC1 /* DiscomfortIndexAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		209CE3AD246D4E2F009D1EC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 200FE1582444A15F00DBA925 /* DiscomfortIndexApp */;
+			targetProxy = 209CE3AC246D4E2F009D1EC1 /* PBXContainerItemProxy */;
+		};
+		209CE3BB246D4E7F009D1EC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 200FE1582444A15F00DBA925 /* DiscomfortIndexApp */;
+			targetProxy = 209CE3BA246D4E7F009D1EC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		200FE1622444A15F00DBA925 /* Main.storyboard */ = {
@@ -372,6 +522,84 @@
 			};
 			name = Release;
 		};
+		209CE3AE246D4E2F009D1EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5BLPV6P8G;
+				INFOPLIST_FILE = DiscomfortIndexAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.t.amd.DiscomfortIndexAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiscomfortIndexApp.app/DiscomfortIndexApp";
+			};
+			name = Debug;
+		};
+		209CE3AF246D4E2F009D1EC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5BLPV6P8G;
+				INFOPLIST_FILE = DiscomfortIndexAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.t.amd.DiscomfortIndexAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiscomfortIndexApp.app/DiscomfortIndexApp";
+			};
+			name = Release;
+		};
+		209CE3BD246D4E7F009D1EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5BLPV6P8G;
+				INFOPLIST_FILE = DiscomfortIndexAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.t.amd.DiscomfortIndexAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiscomfortIndexApp;
+			};
+			name = Debug;
+		};
+		209CE3BE246D4E7F009D1EC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K5BLPV6P8G;
+				INFOPLIST_FILE = DiscomfortIndexAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.t.amd.DiscomfortIndexAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiscomfortIndexApp;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -389,6 +617,24 @@
 			buildConfigurations = (
 				200FE16E2444A16100DBA925 /* Debug */,
 				200FE16F2444A16100DBA925 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		209CE3B0246D4E2F009D1EC1 /* Build configuration list for PBXNativeTarget "DiscomfortIndexAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				209CE3AE246D4E2F009D1EC1 /* Debug */,
+				209CE3AF246D4E2F009D1EC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		209CE3BC246D4E7F009D1EC1 /* Build configuration list for PBXNativeTarget "DiscomfortIndexAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				209CE3BD246D4E7F009D1EC1 /* Debug */,
+				209CE3BE246D4E7F009D1EC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
