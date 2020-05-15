@@ -107,8 +107,14 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comfort" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bc-UG-Eyl">
+                                        <rect key="frame" x="286" y="329" width="88" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INQ-pN-X4p">
-                                        <rect key="frame" x="134" y="329" width="240" height="484"/>
+                                        <rect key="frame" x="134" y="380.5" width="240" height="432.5"/>
                                     </view>
                                 </subviews>
                                 <constraints>
