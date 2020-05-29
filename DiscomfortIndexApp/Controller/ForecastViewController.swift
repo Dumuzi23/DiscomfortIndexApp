@@ -83,12 +83,12 @@ extension ForecastViewController: ForecastManagerDelegate {
                self.firstMaxTemperatureLabel.text = String(firstWeather.maxTemperature)
                self.firstMinTemperatureLabel.text = String(firstWeather.minTemperature)
                self.firstConditionImageView.image = UIImage(systemName: firstWeather.conditionName)
-               self.firstDiscomfortIndexImageView.image = UIImage(named: firstWeather.discomfortIndexName)
+//               self.firstDiscomfortIndexImageView.image = UIImage(named: firstWeather.discomfortIndexName)
                self.secondDayLabel.text = secondWeather.formattedDate
                self.secondMaxTemperatureLabel.text = String(secondWeather.maxTemperature)
                self.secondMinTemperatureLabel.text = String(secondWeather.minTemperature)
                self.secondConditionImageView.image = UIImage(systemName: secondWeather.conditionName)
-               self.secondDiscomfortIndexImageView.image = UIImage(named: secondWeather.discomfortIndexName)
+//               self.secondDiscomfortIndexImageView.image = UIImage(named: secondWeather.discomfortIndexName)
            }
        }
        
