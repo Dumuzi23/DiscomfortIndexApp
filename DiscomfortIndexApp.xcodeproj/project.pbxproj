@@ -23,6 +23,7 @@
 		20B5A552245C28320036776B /* PageVireController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5A551245C28320036776B /* PageVireController.swift */; };
 		20B5A554245E541F0036776B /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5A553245E541E0036776B /* ForecastViewController.swift */; };
 		20B5A558245F856D0036776B /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5A557245F856D0036776B /* ForecastData.swift */; };
+		20CFBB7824810E8F0075905E /* DiscomfortIndexManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFBB7724810E8F0075905E /* DiscomfortIndexManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		20B5A551245C28320036776B /* PageVireController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVireController.swift; sourceTree = "<group>"; };
 		20B5A553245E541E0036776B /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		20B5A557245F856D0036776B /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
+		20CFBB7724810E8F0075905E /* DiscomfortIndexManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscomfortIndexManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				2078049C244C6BBA00D24CEE /* WeatherManager.swift */,
 				209CE39F2465996E009D1EC1 /* ForecastManager.swift */,
+				20CFBB7724810E8F0075905E /* DiscomfortIndexManager.swift */,
 				2078049E244F9C5500D24CEE /* WeatherData.swift */,
 				20B5A557245F856D0036776B /* ForecastData.swift */,
 				207804A224555ECC00D24CEE /* WeatherModel.swift */,
@@ -315,6 +318,7 @@
 				209CE3A02465996E009D1EC1 /* ForecastManager.swift in Sources */,
 				207804A324555ECC00D24CEE /* WeatherModel.swift in Sources */,
 				20B5A554245E541F0036776B /* ForecastViewController.swift in Sources */,
+				20CFBB7824810E8F0075905E /* DiscomfortIndexManager.swift in Sources */,
 				200FE15F2444A15F00DBA925 /* SceneDelegate.swift in Sources */,
 				20B5A558245F856D0036776B /* ForecastData.swift in Sources */,
 				20B5A552245C28320036776B /* PageVireController.swift in Sources */,
