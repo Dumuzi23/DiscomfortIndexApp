@@ -1,5 +1,5 @@
 //
-//  DiscomfortIndexManager.swift
+//  DiscomfortIndexModel.swift
 //  DiscomfortIndexApp
 //
 //  Created by Tatsuya Amida on 2020/05/29.
@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct DiscomfortIndexManager {
+struct DiscomfortIndexModel {
     let temperature: Double
     let humidity: Int
     
     var discomfortIndex: Double {
-        let di = 0.81 * temperature + 0.01 * Double(humidity) * (0.99 * temperature - 14.3) + 46.3
-    }(temperature: Double, humidity: Double) -> Double {
-        
-        return di
+        get {
+            let di = 0.81 * temperature + 0.01 * Double(humidity) * (0.99 * temperature - 14.3) + 46.3
+            return di
+        }
     }
     
-    func judgeDiscomfortIndexName(discomfortIndex: Double) -> String {
+    var discomfortIndexName: String {
         switch discomfortIndex {
         case ..<55:
             return "worst"
@@ -39,4 +39,5 @@ struct DiscomfortIndexManager {
             return "normal"
         }
     }
+    
 }

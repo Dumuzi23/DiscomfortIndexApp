@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 protocol WeatherManagerDelegate {
-    func didUpdateWeather(weatherManager: WeatherManager, weather: WeatherModel)
+    func didUpdateWeather(weatherManager: WeatherManager, weather: WeatherModel, discomfortIndex: DiscomfortIndexModel)
     func didFailWithError(error: Error)
 }
 
@@ -32,7 +32,6 @@ struct WeatherManager {
         performRequest(with: urlString)
     }
     
-    
     func performRequest(with urlString: String) {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
@@ -42,8 +41,8 @@ struct WeatherManager {
                     return
                 }
                 if let safeData = data {
-                    if let weather = self.parseJSONforWeather(weatherData: safeData) {
-                        self.delegate?.didUpdateWeather(weatherManager: self, weather: weather)
+                    if let weather = self.parseJSONforWeather(weatherData: safeData).0, let discomfortIndex = self.parseJSONforWeather(weatherData: safeData).1 {
+                        self.delegate?.didUpdateWeather(weatherManager: self, weather: weather, discomfortIndex: discomfortIndex)
                     }
                 }
             }
@@ -51,7 +50,7 @@ struct WeatherManager {
         }
     }
     
-    func parseJSONforWeather(weatherData: Data) -> WeatherModel? {
+    func parseJSONforWeather(weatherData: Data) -> (WeatherModel?, DiscomfortIndexModel?) {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
@@ -61,11 +60,12 @@ struct WeatherManager {
             let humid = decodedData.current.humidity
             
             let weather = WeatherModel(conditionId: id, cityName: name, date:"0",currentTemperature: temp, maxTemperature: 0.0, minTemperature: 0.0, avgTemperature: 0.0, humidity: humid)
+            let discomfortIndex = DiscomfortIndexModel(temperature: temp, humidity: humid)
             
-            return weather
+            return (weather, discomfortIndex)
         } catch {
             delegate?.didFailWithError(error: error)
-            return nil
+            return (nil, nil)
         }
     }
     
