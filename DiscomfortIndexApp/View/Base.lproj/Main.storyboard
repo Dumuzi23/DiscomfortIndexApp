@@ -472,9 +472,26 @@
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="dbu-gT-kdg" id="Rh7-IG-y7p"/>
+                        <outlet property="dayLabel" destination="Ng1-hn-H7x" id="kjo-Jm-opX"/>
+                        <outlet property="fifthConditionImageView" destination="Xr0-Lq-vGh" id="sXm-rq-bOH"/>
+                        <outlet property="fifthTemperatureLabel" destination="z3M-Dm-5YJ" id="rbh-QO-Zr3"/>
+                        <outlet property="fifthTimeLabel" destination="R2W-Ff-SmD" id="z9s-CW-uGa"/>
                         <outlet property="firstConditionImageView" destination="lB3-ZN-KkZ" id="EVx-KZ-64X"/>
-                        <outlet property="firstDayLabel" destination="Ng1-hn-H7x" id="kjo-Jm-opX"/>
+                        <outlet property="firstTemperatureLabel" destination="ZLU-3M-qAX" id="dNr-25-iUQ"/>
+                        <outlet property="firstTimeLabel" destination="Sco-Qh-WsG" id="Bb7-No-EEZ"/>
+                        <outlet property="fourthConditionImageView" destination="nEj-0A-015" id="Aqc-c7-8bd"/>
+                        <outlet property="fourthTemperatureLabel" destination="4a0-WQ-WZI" id="RAH-qe-ILY"/>
+                        <outlet property="fourthTimeLabel" destination="SD3-2R-X0Y" id="dk2-VV-yBR"/>
                         <outlet property="searchTextField" destination="zyD-b0-uCN" id="m2C-A4-Ztq"/>
+                        <outlet property="secondConditionImageView" destination="n5g-Fk-Gix" id="5UC-VD-TaH"/>
+                        <outlet property="secondTemperatureLabel" destination="A21-nS-I26" id="BWb-Jz-841"/>
+                        <outlet property="secondTimeLabel" destination="59c-mm-kxC" id="n46-65-L7o"/>
+                        <outlet property="sixConditionImageView" destination="OT9-IG-ziW" id="B4r-tc-tIA"/>
+                        <outlet property="sixthTemperatureLabel" destination="1Ff-qd-g30" id="IRp-n9-WPm"/>
+                        <outlet property="sixthTimeLabel" destination="4EY-7Y-okk" id="eVd-U5-GRL"/>
+                        <outlet property="thirdConditionImageView" destination="LSQ-RE-R1J" id="uJ2-JO-dCS"/>
+                        <outlet property="thirdTemperatureLabel" destination="4CG-sl-VGq" id="YWf-j7-C6N"/>
+                        <outlet property="thirdTimeLabel" destination="RNa-E7-OKi" id="i6c-Ik-WrG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3s-dR-eKe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
