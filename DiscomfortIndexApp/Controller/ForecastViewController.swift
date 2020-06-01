@@ -13,10 +13,25 @@ class ForecastViewController: UIViewController {
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var firstDayLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var firstTimeLabel: UILabel!
     @IBOutlet weak var firstConditionImageView: UIImageView!
-    @IBOutlet weak var firstDiscomfortIndexImageView: UIImageView!
-
+    @IBOutlet weak var firstTemperatureLabel: UILabel!
+    @IBOutlet weak var secondTimeLabel: UILabel!
+    @IBOutlet weak var secondConditionImageView: UIImageView!
+    @IBOutlet weak var secondTemperatureLabel: UILabel!
+    @IBOutlet weak var thirdTimeLabel: UILabel!
+    @IBOutlet weak var thirdConditionImageView: UIImageView!
+    @IBOutlet weak var thirdTemperatureLabel: UILabel!
+    @IBOutlet weak var fourthTimeLabel: UILabel!
+    @IBOutlet weak var fourthConditionImageView: UIImageView!
+    @IBOutlet weak var fourthTemperatureLabel: UILabel!
+    @IBOutlet weak var fifthTimeLabel: UILabel!
+    @IBOutlet weak var fifthConditionImageView: UIImageView!
+    @IBOutlet weak var fifthTemperatureLabel: UILabel!
+    @IBOutlet weak var sixthTimeLabel: UILabel!
+    @IBOutlet weak var sixConditionImageView: UIImageView!
+    @IBOutlet weak var sixthTemperatureLabel: UILabel!
     
     var forecastManager = ForecastManager()
     let locationManager = CLLocationManager()
@@ -73,7 +88,7 @@ extension ForecastViewController: ForecastManagerDelegate {
        func didUpdateForecast(weatherManager: ForecastManager, firstWeather: WeatherModel, secondWeather: WeatherModel) {
            DispatchQueue.main.async {
                self.cityLabel.text = firstWeather.cityName
-               self.firstDayLabel.text = firstWeather.formattedDate
+               self.dayLabel.text = firstWeather.formattedDate
                self.firstConditionImageView.image = UIImage(systemName: firstWeather.conditionName)
            }
        }
