@@ -23,16 +23,14 @@ struct Forecast: Decodable {
 
 struct Forecastday: Decodable {
     let date: String
-    let day: Day
-   
+    let hour:[Hour]
 }
 
-struct Day: Decodable {
-    let maxtemp_c: Double
-    let mintemp_c: Double
-    let avgtemp_c: Double
-    let avghumidity: Double
+struct Hour: Decodable {
+    let time: String
+    let temp_c: Double
     let condition: ConditionForForcast
+    let humidity: Int
 }
 
 struct ConditionForForcast: Decodable {

@@ -10,12 +10,12 @@ import Foundation
 import CoreLocation
 
 protocol ForecastManagerDelegate {
-    func didUpdateForecast(weatherManager: ForecastManager, firstWeather: WeatherModel, secondWeather: WeatherModel)
+    func didUpdateForecast(weatherManager: ForecastManager, firstWeather: WeatherModel)
     func didFailWithError(error: Error)
 }
 
 struct ForecastManager {
-    let weatherURL = "https://api.weatherapi.com/v1/forecast.json?days=3&"
+    let weatherURL = "https://api.weatherapi.com/v1/forecast.json?days=2&"
     let apiKey = APIKey()
 
     var delegate: ForecastManagerDelegate?
@@ -41,8 +41,8 @@ struct ForecastManager {
                     return
                 }
                 if let safeData = data {
-                    if let firstWeather  = self.parseJSONforForecast(forecastData: safeData).0, let secondWeather = self.parseJSONforForecast(forecastData: safeData).1 {
-                        self.delegate?.didUpdateForecast(weatherManager: self, firstWeather: firstWeather, secondWeather: secondWeather)
+                    if let firstWeather  = self.parseJSONforForecast(forecastData: safeData) {
+                        self.delegate?.didUpdateForecast(weatherManager: self, firstWeather: firstWeather)
                     }
                 }
             }
@@ -50,31 +50,22 @@ struct ForecastManager {
         }
     }
     
-    func parseJSONforForecast(forecastData: Data) -> (WeatherModel?, WeatherModel?) {
+    func parseJSONforForecast(forecastData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ForecastData.self, from: forecastData)
-            let id = decodedData.forecast.forecastday[1].day.condition.code
             let name = decodedData.location.name
-            let firstDate = decodedData.forecast.forecastday[1].date
-            let firstMaxTemp = decodedData.forecast.forecastday[1].day.maxtemp_c
-            let firstMinTemp = decodedData.forecast.forecastday[1].day.mintemp_c
-            let firstAvgTemp = decodedData.forecast.forecastday[1].day.avgtemp_c
-            let firstHumid = decodedData.forecast.forecastday[1].day.avghumidity
-            let secondDate = decodedData.forecast.forecastday[2].date
-            let secondMaxTemp = decodedData.forecast.forecastday[2].day.maxtemp_c
-            let secondMinTemp = decodedData.forecast.forecastday[2].day.mintemp_c
-            let secondAvgTemp = decodedData.forecast.forecastday[2].day.avgtemp_c
-            let secondHumid = decodedData.forecast.forecastday[2].day.avghumidity
+            let date = decodedData.forecast.forecastday[1].date
+            let sixAMWeatherId = decodedData.forecast.forecastday[1].hour[6].condition.code
+            let sixAMTemperature = decodedData.forecast.forecastday[1].hour[6].temp_c
             
-            let firstWeather = WeatherModel(conditionId: id, cityName: name, date: firstDate, currentTemperature: 0.0, maxTemperature: firstMaxTemp, minTemperature: firstMinTemp, avgTemperature: firstAvgTemp, humidity: Int(firstHumid))
-            let secondWeather = WeatherModel(conditionId: id, cityName: name, date: secondDate, currentTemperature: 0.0, maxTemperature: secondMaxTemp, minTemperature: secondMinTemp, avgTemperature: secondAvgTemp, humidity: Int(secondHumid))
+            let firstWeather = WeatherModel(conditionId: sixAMWeatherId, cityName: name, date: date, currentTemperature: sixAMTemperature, maxTemperature: 0.0, minTemperature: 0.0, avgTemperature: 0.0, humidity: 0)
             
-            return (firstWeather, secondWeather)
+            return firstWeather
             
         } catch {
             delegate?.didFailWithError(error: error)
-            return (nil, nil)
+            return nil
         }
     }
     
