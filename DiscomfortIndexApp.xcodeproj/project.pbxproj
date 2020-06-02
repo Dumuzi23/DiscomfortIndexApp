@@ -24,6 +24,7 @@
 		20B5A554245E541F0036776B /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5A553245E541E0036776B /* ForecastViewController.swift */; };
 		20B5A558245F856D0036776B /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5A557245F856D0036776B /* ForecastData.swift */; };
 		20CFBB7A24813E5A0075905E /* DiscomfortIndexModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFBB7924813E5A0075905E /* DiscomfortIndexModel.swift */; };
+		20CFBB7C248687660075905E /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFBB7B248687660075905E /* ForecastModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		20B5A553245E541E0036776B /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		20B5A557245F856D0036776B /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
 		20CFBB7924813E5A0075905E /* DiscomfortIndexModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscomfortIndexModel.swift; sourceTree = "<group>"; };
+		20CFBB7B248687660075905E /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				2078049E244F9C5500D24CEE /* WeatherData.swift */,
 				20B5A557245F856D0036776B /* ForecastData.swift */,
 				207804A224555ECC00D24CEE /* WeatherModel.swift */,
+				20CFBB7B248687660075905E /* ForecastModel.swift */,
 				20CFBB7924813E5A0075905E /* DiscomfortIndexModel.swift */,
 			);
 			path = Model;
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				200FE1612444A15F00DBA925 /* WeatherViewController.swift in Sources */,
+				20CFBB7C248687660075905E /* ForecastModel.swift in Sources */,
 				209CE3A2246BFD56009D1EC1 /* APIkey.swift in Sources */,
 				2078049F244F9C5500D24CEE /* WeatherData.swift in Sources */,
 				200FE15D2444A15F00DBA925 /* AppDelegate.swift in Sources */,

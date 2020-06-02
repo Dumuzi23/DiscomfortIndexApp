@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 protocol ForecastManagerDelegate {
-    func didUpdateForecast(weatherManager: ForecastManager, firstWeather: WeatherModel)
+    func didUpdateForecast(weatherManager: ForecastManager, weather: ForecastModel)
     func didFailWithError(error: Error)
 }
 
@@ -41,8 +41,8 @@ struct ForecastManager {
                     return
                 }
                 if let safeData = data {
-                    if let firstWeather  = self.parseJSONforForecast(forecastData: safeData) {
-                        self.delegate?.didUpdateForecast(weatherManager: self, firstWeather: firstWeather)
+                    if let weather  = self.parseJSONforForecast(forecastData: safeData) {
+                        self.delegate?.didUpdateForecast(weatherManager: self, weather: weather)
                     }
                 }
             }
@@ -50,7 +50,7 @@ struct ForecastManager {
         }
     }
     
-    func parseJSONforForecast(forecastData: Data) -> WeatherModel? {
+    func parseJSONforForecast(forecastData: Data) -> ForecastModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ForecastData.self, from: forecastData)
@@ -59,9 +59,9 @@ struct ForecastManager {
             let sixAMWeatherId = decodedData.forecast.forecastday[1].hour[6].condition.code
             let sixAMTemperature = decodedData.forecast.forecastday[1].hour[6].temp_c
             
-            let firstWeather = WeatherModel(conditionId: sixAMWeatherId, cityName: name, date: date, currentTemperature: sixAMTemperature, maxTemperature: 0.0, minTemperature: 0.0, avgTemperature: 0.0, humidity: 0)
+            let weather = ForecastModel(cityName: name, date: date, sixAMConditionId: sixAMWeatherId, sixAMTemperature: sixAMTemperature)
             
-            return firstWeather
+            return weather
             
         } catch {
             delegate?.didFailWithError(error: error)
