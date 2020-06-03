@@ -58,8 +58,18 @@ struct ForecastManager {
             let date = decodedData.forecast.forecastday[1].date
             let sixAMWeatherId = decodedData.forecast.forecastday[1].hour[6].condition.code
             let sixAMTemperature = decodedData.forecast.forecastday[1].hour[6].temp_c
+            let nineAMWeatherId = decodedData.forecast.forecastday[1].hour[9].condition.code
+            let nineAMTemperature = decodedData.forecast.forecastday[1].hour[9].temp_c
+            let twelvePMWeatherId = decodedData.forecast.forecastday[1].hour[12].condition.code
+            let twelvePMTemperature = decodedData.forecast.forecastday[1].hour[12].temp_c
+            let threePMWeatherId = decodedData.forecast.forecastday[1].hour[15].condition.code
+            let threePMTemperature = decodedData.forecast.forecastday[1].hour[15].temp_c
+            let sixPMWeatherId = decodedData.forecast.forecastday[1].hour[18].condition.code
+            let sixPMTemperature = decodedData.forecast.forecastday[1].hour[18].temp_c
+            let ninePMWeatherId = decodedData.forecast.forecastday[1].hour[21].condition.code
+            let ninePMTemperature = decodedData.forecast.forecastday[1].hour[21].temp_c
             
-            let forecast = ForecastModel(cityName: name, date: date, sixAMConditionId: sixAMWeatherId, sixAMTemperature: sixAMTemperature)
+            let forecast = ForecastModel(cityName: name, date: date, sixAMConditionId: sixAMWeatherId, nineAMConditionId: nineAMWeatherId, twelvePMConditionId: twelvePMWeatherId, threePMConditionId: threePMWeatherId, sixPMConditionId: sixPMWeatherId, ninePMConditionId: ninePMWeatherId, sixAMTemperature: sixAMTemperature, nineAMTemperature: nineAMTemperature, twelvePMTemperature: twelvePMTemperature, threePMTemperature: threePMTemperature, sixPMTemperature: sixPMTemperature, ninePMTemperature: ninePMTemperature)
             
             return forecast
             
