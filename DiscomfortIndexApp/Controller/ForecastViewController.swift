@@ -84,19 +84,29 @@ extension ForecastViewController: UITextFieldDelegate {
 }
 
 extension ForecastViewController: ForecastManagerDelegate {
-       
-       func didUpdateForecast(forecastManager: ForecastManager, forecast: ForecastModel) {
-           DispatchQueue.main.async {
-               self.cityLabel.text = forecast.cityName
-               self.dayLabel.text = forecast.formattedDate
-               self.firstConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.sixAMConditionId))
-               self.firstTemperatureLabel.text = forecast.temperatureString(temp: forecast.sixAMTemperature)
-           }
-       }
-       
-       func didFailWithError(error: Error) {
-           print(error)
-       }
+    
+    func didUpdateForecast(forecastManager: ForecastManager, forecast: ForecastModel) {
+        DispatchQueue.main.async {
+            self.cityLabel.text = forecast.cityName
+            self.dayLabel.text = forecast.formattedDate
+            self.firstConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.sixAMConditionId))
+            self.firstTemperatureLabel.text = forecast.temperatureString(temp: forecast.sixAMTemperature)
+            self.secondConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.nineAMConditionId))
+            self.secondTemperatureLabel.text = forecast.temperatureString(temp: forecast.nineAMTemperature)
+            self.thirdConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.twelvePMConditionId))
+            self.thirdTemperatureLabel.text = forecast.temperatureString(temp: forecast.twelvePMTemperature)
+            self.fourthConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.threePMConditionId))
+            self.fourthTemperatureLabel.text = forecast.temperatureString(temp: forecast.threePMTemperature)
+            self.fifthConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.sixPMConditionId))
+            self.fifthTemperatureLabel.text = forecast.temperatureString(temp: forecast.sixPMTemperature)
+            self.sixConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.ninePMConditionId))
+            self.sixthTemperatureLabel.text = forecast.temperatureString(temp: forecast.ninePMTemperature)
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
 }
 
 extension ForecastViewController: CLLocationManagerDelegate {

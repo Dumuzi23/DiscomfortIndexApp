@@ -12,17 +12,17 @@ struct ForecastModel {
     let cityName: String
     let date: String
     let sixAMConditionId: Int
-//    let nineAMConditionId: Int
-//    let twelvePMConditionId: Int
-//    let threePMConditionId: Int
-//    let sixPMConditionId: Int
-//    let ninePMConditionId: Int
+    let nineAMConditionId: Int
+    let twelvePMConditionId: Int
+    let threePMConditionId: Int
+    let sixPMConditionId: Int
+    let ninePMConditionId: Int
     let sixAMTemperature: Double
-//    let nineAMTemperature: Double
-//    let twelvePMTemperature: Double
-//    let threePMTemperature: Double
-//    let sixPMTemperature: Double
-//    let ninePMTemperature: Double
+    let nineAMTemperature: Double
+    let twelvePMTemperature: Double
+    let threePMTemperature: Double
+    let sixPMTemperature: Double
+    let ninePMTemperature: Double
 
     var formattedDate: String {
         let dateArray = date.components(separatedBy: "-")
