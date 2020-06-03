@@ -85,12 +85,12 @@ extension ForecastViewController: UITextFieldDelegate {
 
 extension ForecastViewController: ForecastManagerDelegate {
        
-       func didUpdateForecast(weatherManager: ForecastManager, weather: ForecastModel) {
+       func didUpdateForecast(forecastManager: ForecastManager, forecast: ForecastModel) {
            DispatchQueue.main.async {
-               self.cityLabel.text = weather.cityName
-               self.dayLabel.text = weather.formattedDate
-               self.firstConditionImageView.image = UIImage(systemName: weather.judgeConditionName(conditionId: weather.sixAMConditionId))
-               self.firstTemperatureLabel.text = weather.temperatureString(temp: weather.sixAMTemperature)
+               self.cityLabel.text = forecast.cityName
+               self.dayLabel.text = forecast.formattedDate
+               self.firstConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.sixAMConditionId))
+               self.firstTemperatureLabel.text = forecast.temperatureString(temp: forecast.sixAMTemperature)
            }
        }
        

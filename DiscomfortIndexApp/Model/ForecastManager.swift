@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 protocol ForecastManagerDelegate {
-    func didUpdateForecast(weatherManager: ForecastManager, weather: ForecastModel)
+    func didUpdateForecast(forecastManager: ForecastManager, forecast: ForecastModel)
     func didFailWithError(error: Error)
 }
 
@@ -41,8 +41,8 @@ struct ForecastManager {
                     return
                 }
                 if let safeData = data {
-                    if let weather  = self.parseJSONforForecast(forecastData: safeData) {
-                        self.delegate?.didUpdateForecast(weatherManager: self, weather: weather)
+                    if let forecast  = self.parseJSONforForecast(forecastData: safeData) {
+                        self.delegate?.didUpdateForecast(forecastManager: self, forecast: forecast)
                     }
                 }
             }
@@ -59,9 +59,9 @@ struct ForecastManager {
             let sixAMWeatherId = decodedData.forecast.forecastday[1].hour[6].condition.code
             let sixAMTemperature = decodedData.forecast.forecastday[1].hour[6].temp_c
             
-            let weather = ForecastModel(cityName: name, date: date, sixAMConditionId: sixAMWeatherId, sixAMTemperature: sixAMTemperature)
+            let forecast = ForecastModel(cityName: name, date: date, sixAMConditionId: sixAMWeatherId, sixAMTemperature: sixAMTemperature)
             
-            return weather
+            return forecast
             
         } catch {
             delegate?.didFailWithError(error: error)
