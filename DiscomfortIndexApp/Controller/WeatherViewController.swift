@@ -17,6 +17,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var discomfortIndexImageView: UIImageView!
+    @IBOutlet weak var discomfortIndexLabel: UILabel!
     
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
@@ -74,7 +75,8 @@ extension WeatherViewController: WeatherManagerDelegate {
         DispatchQueue.main.async {
             self.cityLabel.text = weather.cityName
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
-            self.discomfortIndexImageView.image = UIImage(named: discomfortIndex.discomfortIndexName)
+            self.discomfortIndexImageView.image = UIImage(named: discomfortIndex.discomfortIndexImage)
+            self.discomfortIndexLabel.text = discomfortIndex.discomfortIndexName
             self.temperatureLabel.text = weather.temperatureString
             self.humidityLabel.text = weather.humidityString
         }

@@ -19,7 +19,7 @@ struct DiscomfortIndexModel {
         }
     }
     
-    var discomfortIndexName: String {
+    var discomfortIndexImage: String {
         switch discomfortIndex {
         case ..<55:
             return "worst"
@@ -37,6 +37,29 @@ struct DiscomfortIndexModel {
             return "worst"
         default:
             return "normal"
+        }
+    }
+    
+    var discomfortIndexName: String {
+        switch discomfortIndex {
+        case ..<55:
+            return "Cold!"
+        case 55..<60:
+            return "Chilly"
+        case 60..<65:
+            return "Normal"
+        case 65..<70:
+            return "Comfort!"
+        case 70..<75:
+            return "Normal"
+        case 75..<80:
+            return "A little hot"
+        case 80..<85:
+            return "Hot"
+        case 85...:
+            return "Boiling Hot!"
+        default:
+            return "Normal"
         }
     }
     
