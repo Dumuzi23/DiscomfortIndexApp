@@ -179,6 +179,7 @@
                         <outlet property="cityLabel" destination="JV7-M3-mmU" id="X58-2d-cIc"/>
                         <outlet property="conditionImageView" destination="rhY-ix-f8A" id="tEA-17-xNZ"/>
                         <outlet property="discomfortIndexImageView" destination="rD6-xY-gnD" id="s9L-Em-3Ba"/>
+                        <outlet property="humidityLabel" destination="YKQ-OK-NLb" id="ZMW-01-BtU"/>
                         <outlet property="searchTextField" destination="wJi-bY-eaW" id="eH0-I3-8K2"/>
                         <outlet property="temperatureLabel" destination="PtB-UC-NBF" id="FJY-Vc-cz5"/>
                     </connections>

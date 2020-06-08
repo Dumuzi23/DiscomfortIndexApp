@@ -14,6 +14,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var discomfortIndexImageView: UIImageView!
     
@@ -75,6 +76,7 @@ extension WeatherViewController: WeatherManagerDelegate {
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
             self.discomfortIndexImageView.image = UIImage(named: discomfortIndex.discomfortIndexName)
             self.temperatureLabel.text = weather.temperatureString
+            self.humidityLabel.text = weather.humidityString
         }
     }
     
