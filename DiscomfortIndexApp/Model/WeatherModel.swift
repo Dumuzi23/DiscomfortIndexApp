@@ -28,6 +28,10 @@ struct WeatherModel {
         return String(format: "%.1f", currentTemperature)
     }
     
+    var humidityString: String {
+        return String(humidity)
+    }
+    
     var conditionName: String {
         switch conditionId {
         case 1000:
