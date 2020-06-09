@@ -30,7 +30,8 @@ struct ForecastModel {
     }
     
     func temperatureString(temp: Double) -> String {
-        return String(format: "%.1f", temp)
+        let temperatureInt = Int(round(temp))
+        return String(temperatureInt)
     }
     
     func judgeConditionName(conditionId: Int) -> String {

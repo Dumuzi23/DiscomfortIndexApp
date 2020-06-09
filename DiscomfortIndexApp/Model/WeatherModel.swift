@@ -25,7 +25,8 @@ struct WeatherModel {
     }
     
     var temperatureString: String {
-        return String(format: "%.1f", currentTemperature)
+        let temperatureInt = Int((round(currentTemperature)))
+        return String(temperatureInt)
     }
     
     var humidityString: String {
