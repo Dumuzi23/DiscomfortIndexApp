@@ -59,7 +59,7 @@ struct WeatherManager {
             let temp = decodedData.current.temp_c
             let humid = decodedData.current.humidity
             
-            let weather = WeatherModel(conditionId: id, cityName: name, date:"0",currentTemperature: temp, maxTemperature: 0.0, minTemperature: 0.0, avgTemperature: 0.0, humidity: humid)
+            let weather = WeatherModel(conditionId: id, cityName: name, currentTemperature: temp, humidity: humid)
             let discomfortIndex = DiscomfortIndexModel(temperature: temp, humidity: humid)
             
             return (weather, discomfortIndex)
