@@ -25,6 +25,7 @@
 		20B5A558245F856D0036776B /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5A557245F856D0036776B /* ForecastData.swift */; };
 		20CFBB7A24813E5A0075905E /* DiscomfortIndexModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFBB7924813E5A0075905E /* DiscomfortIndexModel.swift */; };
 		20CFBB7C248687660075905E /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFBB7B248687660075905E /* ForecastModel.swift */; };
+		20CFBB9E2491101F0075905E /* media in Resources */ = {isa = PBXBuildFile; fileRef = 20CFBB9D2491101F0075905E /* media */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		20B5A557245F856D0036776B /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
 		20CFBB7924813E5A0075905E /* DiscomfortIndexModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscomfortIndexModel.swift; sourceTree = "<group>"; };
 		20CFBB7B248687660075905E /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
+		20CFBB9D2491101F0075905E /* media */ = {isa = PBXFileReference; lastKnownFileType = folder; path = media; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				20780499244C5AD500D24CEE /* Model */,
 				2078049A244C5AED00D24CEE /* View */,
 				2078049B244C5B1D00D24CEE /* Controller */,
+				20CFBB9D2491101F0075905E /* media */,
 				200FE1652444A16100DBA925 /* Assets.xcassets */,
 				200FE1672444A16100DBA925 /* LaunchScreen.storyboard */,
 				200FE16A2444A16100DBA925 /* Info.plist */,
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				200FE1692444A16100DBA925 /* LaunchScreen.storyboard in Resources */,
+				20CFBB9E2491101F0075905E /* media in Resources */,
 				200FE1662444A16100DBA925 /* Assets.xcassets in Resources */,
 				200FE1642444A15F00DBA925 /* Main.storyboard in Resources */,
 			);
