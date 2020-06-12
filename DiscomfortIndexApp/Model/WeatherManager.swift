@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import Alamofire
 
 protocol WeatherManagerDelegate {
     func didUpdateWeather(weatherManager: WeatherManager, weather: WeatherModel, discomfortIndex: DiscomfortIndexModel)
@@ -33,20 +34,14 @@ struct WeatherManager {
     }
     
     func performRequest(with urlString: String) {
-        if let url = URL(string: urlString) {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    self.delegate?.didFailWithError(error: error!)
-                    return
+        AF.request(urlString, method: .get).responseJSON { response in
+            if let safeData = response.data {
+                if let weather = self.parseJSONforWeather(weatherData: safeData).0, let di = self.parseJSONforWeather(weatherData: safeData).1 {
+                    self.delegate?.didUpdateWeather(weatherManager: self, weather: weather, discomfortIndex: di)
                 }
-                if let safeData = data {
-                    if let weather = self.parseJSONforWeather(weatherData: safeData).0, let discomfortIndex = self.parseJSONforWeather(weatherData: safeData).1 {
-                        self.delegate?.didUpdateWeather(weatherManager: self, weather: weather, discomfortIndex: discomfortIndex)
-                    }
-                }
+            } else {
+                print("error")
             }
-            task.resume()
         }
     }
     

@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import Alamofire
 
 protocol ForecastManagerDelegate {
     func didUpdateForecast(forecastManager: ForecastManager, forecast: ForecastModel)
@@ -33,20 +34,14 @@ struct ForecastManager {
     }
     
     func performRequest(with urlString: String) {
-        if let url = URL(string: urlString) {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    self.delegate?.didFailWithError(error: error!)
-                    return
+        AF.request(urlString, method: .get).responseJSON { response in
+            if let safeData = response.data {
+                if let forecast = self.parseJSONforForecast(forecastData: safeData) {
+                    self.delegate?.didUpdateForecast(forecastManager: self, forecast: forecast)
                 }
-                if let safeData = data {
-                    if let forecast  = self.parseJSONforForecast(forecastData: safeData) {
-                        self.delegate?.didUpdateForecast(forecastManager: self, forecast: forecast)
-                    }
-                }
+            } else {
+                print("error")
             }
-            task.resume()
         }
     }
     
