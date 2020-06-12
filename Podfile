@@ -5,6 +5,8 @@ target 'DiscomfortIndexApp' do
 
   # Pods for DiscomfortIndexApp
 
+pod 'Alamofire', '~> 5.2'
+
   target 'DiscomfortIndexAppTests' do
     inherit! :search_paths
     # Pods for testing
