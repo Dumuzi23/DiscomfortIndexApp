@@ -25,8 +25,12 @@ struct ForecastModel {
     let ninePMTemperature: Double
 
     var formattedDate: String {
-        let dateArray = date.components(separatedBy: "-")
-        return String(format: "%@/%@", dateArray[1], dateArray[2])
+        if date == "" {
+            return "****"
+        } else {
+            let dateArray = date.components(separatedBy: "-")
+            return String(format: "%@/%@", dateArray[1], dateArray[2])
+        }
     }
     
     func temperatureString(temp: Double) -> String {
