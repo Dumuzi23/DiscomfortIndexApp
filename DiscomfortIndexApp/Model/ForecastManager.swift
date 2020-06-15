@@ -21,19 +21,19 @@ struct ForecastManager {
     let apiKey = APIKey()
 
     var delegate: ForecastManagerDelegate?
-    
+
     func fetchForecast(cityName: String) {
         let urlString = "\(weatherURL)key=\(apiKey.key)&q=\(cityName)"
-        
+
         performRequest(with: urlString)
     }
-    
+
     func fetchForecast(latitude: CLLocationDegrees, longtude: CLLocationDegrees) {
         let urlString = "\(weatherURL)key=\(apiKey.key)&q=\(latitude),\(longtude)"
-        
+
         performRequest(with: urlString)
     }
-    
+
     func performRequest(with urlString: String) {
         AF.request(urlString, method: .get).responseJSON { response in
             switch response.result {
@@ -48,7 +48,7 @@ struct ForecastManager {
             }
         }
     }
-    
+
     func parseJSONforForecast(forecastData: Data) -> ForecastModel? {
         do {
             let json = try JSON(data: forecastData)
@@ -68,12 +68,12 @@ struct ForecastManager {
             let ninePMTemperature = json["forecast"]["forecastday"][1]["hour"][21]["temp_c"].doubleValue
 
             let forecast = ForecastModel(cityName: name, date: date, sixAMConditionId: sixAMWeatherId, nineAMConditionId: nineAMWeatherId, twelvePMConditionId: twelvePMWeatherId, threePMConditionId: threePMWeatherId, sixPMConditionId: sixPMWeatherId, ninePMConditionId: ninePMWeatherId, sixAMTemperature: sixAMTemperature, nineAMTemperature: nineAMTemperature, twelvePMTemperature: twelvePMTemperature, threePMTemperature: threePMTemperature, sixPMTemperature: sixPMTemperature, ninePMTemperature: ninePMTemperature)
-            
+
             return forecast
         } catch {
             delegate?.didFailWithError(error: error)
             return nil
         }
     }
-    
+
 }

@@ -18,38 +18,38 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var discomfortIndexImageView: UIImageView!
     @IBOutlet weak var discomfortIndexLabel: UILabel!
-    
+
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-        
+
         weatherManager.delegate = self
         searchTextField.delegate = self
     }
-    
+
     @IBAction func locationPressed(_ sender: UIButton) {
         locationManager.requestLocation()
     }
 }
 
 extension WeatherViewController: UITextFieldDelegate {
-    
+
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
 
         return true
     }
-    
+
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             return true
@@ -57,14 +57,14 @@ extension WeatherViewController: UITextFieldDelegate {
             textField.placeholder = "Type something"
             return false
         }
-        
+
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let city = searchTextField.text {
             weatherManager.fetchWeather(cityName: city)
         }
-        
+
         searchTextField.text = ""
     }
 }
@@ -80,7 +80,7 @@ extension WeatherViewController: WeatherManagerDelegate {
             self.humidityLabel.text = weather.humidityString
         }
     }
-    
+
     func didFailWithError(error: Error) {
         print(error)
     }
@@ -94,7 +94,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
             weatherManager.fetchWeather(latitude: lat, longtude: lon)
         }
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }

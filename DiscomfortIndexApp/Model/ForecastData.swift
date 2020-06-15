@@ -23,7 +23,7 @@ struct Forecast: Decodable {
 
 struct Forecastday: Decodable {
     let date: String
-    let hour:[Hour]
+    let hour: [Hour]
 }
 
 struct Hour: Decodable {

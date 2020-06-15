@@ -32,12 +32,12 @@ struct ForecastModel {
             return String(format: "%@/%@", dateArray[1], dateArray[2])
         }
     }
-    
+
     func temperatureString(temp: Double) -> String {
         let temperatureInt = Int(round(temp))
         return String(temperatureInt)
     }
-    
+
     func judgeConditionName(conditionId: Int) -> String {
         switch conditionId {
         case 1000:

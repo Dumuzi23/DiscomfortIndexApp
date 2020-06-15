@@ -13,16 +13,16 @@ struct WeatherModel {
     let cityName: String
     let currentTemperature: Double
     let humidity: Int
-    
+
     var temperatureString: String {
         let temperatureInt = Int((round(currentTemperature)))
         return String(temperatureInt)
     }
-    
+
     var humidityString: String {
         return String(humidity)
     }
-    
+
     var conditionName: String {
         switch conditionId {
         case 1000:
