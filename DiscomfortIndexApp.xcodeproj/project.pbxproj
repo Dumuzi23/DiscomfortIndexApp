@@ -14,7 +14,6 @@
 		200FE1662444A16100DBA925 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200FE1652444A16100DBA925 /* Assets.xcassets */; };
 		200FE1692444A16100DBA925 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 200FE1672444A16100DBA925 /* LaunchScreen.storyboard */; };
 		2078049D244C6BBA00D24CEE /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078049C244C6BBA00D24CEE /* WeatherManager.swift */; };
-		2078049F244F9C5500D24CEE /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078049E244F9C5500D24CEE /* WeatherData.swift */; };
 		207804A324555ECC00D24CEE /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207804A224555ECC00D24CEE /* WeatherModel.swift */; };
 		209CE3A02465996E009D1EC1 /* ForecastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CE39F2465996E009D1EC1 /* ForecastManager.swift */; };
 		209CE3A2246BFD56009D1EC1 /* APIkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CE3A1246BFD56009D1EC1 /* APIkey.swift */; };
@@ -22,7 +21,6 @@
 		209CE3B8246D4E7F009D1EC1 /* DiscomfortIndexAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209CE3B7246D4E7F009D1EC1 /* DiscomfortIndexAppUITests.swift */; };
 		20B5A552245C28320036776B /* PageVireController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5A551245C28320036776B /* PageVireController.swift */; };
 		20B5A554245E541F0036776B /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5A553245E541E0036776B /* ForecastViewController.swift */; };
-		20B5A558245F856D0036776B /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5A557245F856D0036776B /* ForecastData.swift */; };
 		20CFBB7A24813E5A0075905E /* DiscomfortIndexModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFBB7924813E5A0075905E /* DiscomfortIndexModel.swift */; };
 		20CFBB7C248687660075905E /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CFBB7B248687660075905E /* ForecastModel.swift */; };
 		2256DE0171F6AB7BC8008165 /* Pods_DiscomfortIndexApp_DiscomfortIndexAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB980D61768385EFDADE02F /* Pods_DiscomfortIndexApp_DiscomfortIndexAppUITests.framework */; };
@@ -59,7 +57,6 @@
 		200FE1682444A16100DBA925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		200FE16A2444A16100DBA925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2078049C244C6BBA00D24CEE /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
-		2078049E244F9C5500D24CEE /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		207804A224555ECC00D24CEE /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		209CE39F2465996E009D1EC1 /* ForecastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastManager.swift; sourceTree = "<group>"; };
 		209CE3A1246BFD56009D1EC1 /* APIkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIkey.swift; sourceTree = "<group>"; };
@@ -71,7 +68,6 @@
 		209CE3B9246D4E7F009D1EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20B5A551245C28320036776B /* PageVireController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVireController.swift; sourceTree = "<group>"; };
 		20B5A553245E541E0036776B /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
-		20B5A557245F856D0036776B /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
 		20CFBB7924813E5A0075905E /* DiscomfortIndexModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscomfortIndexModel.swift; sourceTree = "<group>"; };
 		20CFBB7B248687660075905E /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
 		311165487C871F9AD81C8519 /* Pods-DiscomfortIndexAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiscomfortIndexAppTests.debug.xcconfig"; path = "Target Support Files/Pods-DiscomfortIndexAppTests/Pods-DiscomfortIndexAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,8 +150,6 @@
 			children = (
 				2078049C244C6BBA00D24CEE /* WeatherManager.swift */,
 				209CE39F2465996E009D1EC1 /* ForecastManager.swift */,
-				2078049E244F9C5500D24CEE /* WeatherData.swift */,
-				20B5A557245F856D0036776B /* ForecastData.swift */,
 				207804A224555ECC00D24CEE /* WeatherModel.swift */,
 				20CFBB7B248687660075905E /* ForecastModel.swift */,
 				20CFBB7924813E5A0075905E /* DiscomfortIndexModel.swift */,
@@ -482,7 +476,6 @@
 				200FE1612444A15F00DBA925 /* WeatherViewController.swift in Sources */,
 				20CFBB7C248687660075905E /* ForecastModel.swift in Sources */,
 				209CE3A2246BFD56009D1EC1 /* APIkey.swift in Sources */,
-				2078049F244F9C5500D24CEE /* WeatherData.swift in Sources */,
 				200FE15D2444A15F00DBA925 /* AppDelegate.swift in Sources */,
 				2078049D244C6BBA00D24CEE /* WeatherManager.swift in Sources */,
 				209CE3A02465996E009D1EC1 /* ForecastManager.swift in Sources */,
@@ -490,7 +483,6 @@
 				20B5A554245E541F0036776B /* ForecastViewController.swift in Sources */,
 				20CFBB7A24813E5A0075905E /* DiscomfortIndexModel.swift in Sources */,
 				200FE15F2444A15F00DBA925 /* SceneDelegate.swift in Sources */,
-				20B5A558245F856D0036776B /* ForecastData.swift in Sources */,
 				20B5A552245C28320036776B /* PageVireController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
