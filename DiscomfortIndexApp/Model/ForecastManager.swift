@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import Alamofire
+import SwiftyJSON
 
 protocol ForecastManagerDelegate {
     func didUpdateForecast(forecastManager: ForecastManager, forecast: ForecastModel)
@@ -46,28 +47,26 @@ struct ForecastManager {
     }
     
     func parseJSONforForecast(forecastData: Data) -> ForecastModel? {
-        let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(ForecastData.self, from: forecastData)
-            let name = decodedData.location.name
-            let date = decodedData.forecast.forecastday[1].date
-            let sixAMWeatherId = decodedData.forecast.forecastday[1].hour[6].condition.code
-            let sixAMTemperature = decodedData.forecast.forecastday[1].hour[6].temp_c
-            let nineAMWeatherId = decodedData.forecast.forecastday[1].hour[9].condition.code
-            let nineAMTemperature = decodedData.forecast.forecastday[1].hour[9].temp_c
-            let twelvePMWeatherId = decodedData.forecast.forecastday[1].hour[12].condition.code
-            let twelvePMTemperature = decodedData.forecast.forecastday[1].hour[12].temp_c
-            let threePMWeatherId = decodedData.forecast.forecastday[1].hour[15].condition.code
-            let threePMTemperature = decodedData.forecast.forecastday[1].hour[15].temp_c
-            let sixPMWeatherId = decodedData.forecast.forecastday[1].hour[18].condition.code
-            let sixPMTemperature = decodedData.forecast.forecastday[1].hour[18].temp_c
-            let ninePMWeatherId = decodedData.forecast.forecastday[1].hour[21].condition.code
-            let ninePMTemperature = decodedData.forecast.forecastday[1].hour[21].temp_c
-            
+            let json = try JSON(data: forecastData)
+            let name = json["location"]["name"].stringValue
+            let date = json["forecast"]["forecastday"][1]["date"].stringValue
+            let sixAMWeatherId = json["forecast"]["forecastday"][1]["hour"][6]["condition"]["code"].intValue
+            let sixAMTemperature = json["forecast"]["forecastday"][1]["hour"][6]["temp_c"].doubleValue
+            let nineAMWeatherId = json["forecast"]["forecastday"][1]["hour"][9]["condition"]["code"].intValue
+            let nineAMTemperature = json["forecast"]["forecastday"][1]["hour"][9]["temp_c"].doubleValue
+            let twelvePMWeatherId = json["forecast"]["forecastday"][1]["hour"][12]["condition"]["code"].intValue
+            let twelvePMTemperature = json["forecast"]["forecastday"][1]["hour"][12]["temp_c"].doubleValue
+            let threePMWeatherId = json["forecast"]["forecastday"][1]["hour"][15]["condition"]["code"].intValue
+            let threePMTemperature = json["forecast"]["forecastday"][1]["hour"][15]["temp_c"].doubleValue
+            let sixPMWeatherId = json["forecast"]["forecastday"][1]["hour"][18]["condition"]["code"].intValue
+            let sixPMTemperature = json["forecast"]["forecastday"][1]["hour"][18]["temp_c"].doubleValue
+            let ninePMWeatherId = json["forecast"]["forecastday"][1]["hour"][21]["condition"]["code"].intValue
+            let ninePMTemperature = json["forecast"]["forecastday"][1]["hour"][21]["temp_c"].doubleValue
+
             let forecast = ForecastModel(cityName: name, date: date, sixAMConditionId: sixAMWeatherId, nineAMConditionId: nineAMWeatherId, twelvePMConditionId: twelvePMWeatherId, threePMConditionId: threePMWeatherId, sixPMConditionId: sixPMWeatherId, ninePMConditionId: ninePMWeatherId, sixAMTemperature: sixAMTemperature, nineAMTemperature: nineAMTemperature, twelvePMTemperature: twelvePMTemperature, threePMTemperature: threePMTemperature, sixPMTemperature: sixPMTemperature, ninePMTemperature: ninePMTemperature)
             
             return forecast
-            
         } catch {
             delegate?.didFailWithError(error: error)
             return nil
