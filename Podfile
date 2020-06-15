@@ -6,6 +6,7 @@ target 'DiscomfortIndexApp' do
   # Pods for DiscomfortIndexApp
 
 pod 'Alamofire', '~> 5.2'
+pod 'SwiftyJSON', '~> 4.0'
 
   target 'DiscomfortIndexAppTests' do
     inherit! :search_paths
