@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 class ForecastViewController: UIViewController {
-    
+
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
@@ -32,38 +32,38 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var sixthTimeLabel: UILabel!
     @IBOutlet weak var sixConditionImageView: UIImageView!
     @IBOutlet weak var sixthTemperatureLabel: UILabel!
-    
+
     var forecastManager = ForecastManager()
     let locationManager = CLLocationManager()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-        
+
         forecastManager.delegate = self
         searchTextField.delegate = self
     }
-    
+
     @IBAction func locationPressed(_ sender: UIButton) {
         locationManager.requestLocation()
     }
 }
 
 extension ForecastViewController: UITextFieldDelegate {
-    
+
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
-        
+
         return true
     }
-    
+
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             return true
@@ -71,20 +71,20 @@ extension ForecastViewController: UITextFieldDelegate {
             textField.placeholder = "Type something"
             return false
         }
-        
+
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let city = searchTextField.text {
             forecastManager.fetchForecast(cityName: city)
         }
-        
+
         searchTextField.text = ""
     }
 }
 
 extension ForecastViewController: ForecastManagerDelegate {
-    
+
     func didUpdateForecast(forecastManager: ForecastManager, forecast: ForecastModel) {
         DispatchQueue.main.async {
             self.cityLabel.text = forecast.cityName
@@ -103,7 +103,7 @@ extension ForecastViewController: ForecastManagerDelegate {
             self.sixthTemperatureLabel.text = forecast.temperatureString(temp: forecast.ninePMTemperature)
         }
     }
-    
+
     func didFailWithError(error: Error) {
         print(error)
     }
@@ -117,7 +117,7 @@ extension ForecastViewController: CLLocationManagerDelegate {
             forecastManager.fetchForecast(latitude: lat, longtude: lon)
         }
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }

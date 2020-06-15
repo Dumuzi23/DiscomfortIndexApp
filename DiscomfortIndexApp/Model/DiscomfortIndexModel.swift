@@ -11,14 +11,12 @@ import Foundation
 struct DiscomfortIndexModel {
     let temperature: Double
     let humidity: Int
-    
+
     var discomfortIndex: Double {
-        get {
             let di = 0.81 * temperature + 0.01 * Double(humidity) * (0.99 * temperature - 14.3) + 46.3
             return di
-        }
     }
-    
+
     var discomfortIndexImage: String {
         switch discomfortIndex {
         case ..<55:
@@ -39,7 +37,7 @@ struct DiscomfortIndexModel {
             return "normal"
         }
     }
-    
+
     var discomfortIndexName: String {
         switch discomfortIndex {
         case ..<55:
@@ -62,5 +60,5 @@ struct DiscomfortIndexModel {
             return "Normal"
         }
     }
-    
+
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -219,7 +219,6 @@
 				311165487C871F9AD81C8519 /* Pods-DiscomfortIndexAppTests.debug.xcconfig */,
 				4D996744CC7E4A95879EB798 /* Pods-DiscomfortIndexAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -235,6 +234,7 @@
 				200FE1562444A15F00DBA925 /* Frameworks */,
 				200FE1572444A15F00DBA925 /* Resources */,
 				B1F0A9393495918DFEA230F9 /* [CP] Embed Pods Frameworks */,
+				203E5F86249797F30042DD4E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -371,6 +371,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DiscomfortIndexApp-DiscomfortIndexAppUITests/Pods-DiscomfortIndexApp-DiscomfortIndexAppUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		203E5F86249797F30042DD4E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		53A00AEC9ECC0E2CCCDCA9EE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
