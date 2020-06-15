@@ -36,12 +36,15 @@ struct ForecastManager {
     
     func performRequest(with urlString: String) {
         AF.request(urlString, method: .get).responseJSON { response in
-            if let safeData = response.data {
-                if let forecast = self.parseJSONforForecast(forecastData: safeData) {
-                    self.delegate?.didUpdateForecast(forecastManager: self, forecast: forecast)
+            switch response.result {
+            case .success(_):
+                if let safeData = response.data {
+                    if let forecast = self.parseJSONforForecast(forecastData: safeData) {
+                        self.delegate?.didUpdateForecast(forecastManager: self, forecast: forecast)
+                    }
                 }
-            } else {
-                print("error")
+            case .failure(let error):
+                self.delegate?.didFailWithError(error: error)
             }
         }
     }
