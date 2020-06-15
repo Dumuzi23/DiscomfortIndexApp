@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import Alamofire
+import SwiftyJSON
 
 protocol WeatherManagerDelegate {
     func didUpdateWeather(weatherManager: WeatherManager, weather: WeatherModel, discomfortIndex: DiscomfortIndexModel)
@@ -36,8 +37,8 @@ struct WeatherManager {
     func performRequest(with urlString: String) {
         AF.request(urlString, method: .get).responseJSON { response in
             if let safeData = response.data {
-                if let weather = self.parseJSONforWeather(weatherData: safeData).0, let di = self.parseJSONforWeather(weatherData: safeData).1 {
-                    self.delegate?.didUpdateWeather(weatherManager: self, weather: weather, discomfortIndex: di)
+                if let weather = self.parseJSONforWeather(weatherData: safeData) {
+                    self.delegate?.didUpdateWeather(weatherManager: self, weather: weather.0, discomfortIndex: weather.1)
                 }
             } else {
                 print("error")
@@ -45,14 +46,13 @@ struct WeatherManager {
         }
     }
     
-    func parseJSONforWeather(weatherData: Data) -> (WeatherModel?, DiscomfortIndexModel?) {
-        let decoder = JSONDecoder()
+    func parseJSONforWeather(weatherData: Data) -> (WeatherModel, DiscomfortIndexModel)? {
         do {
-            let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
-            let id = decodedData.current.condition.code
-            let name = decodedData.location.name
-            let temp = decodedData.current.temp_c
-            let humid = decodedData.current.humidity
+            let json = try JSON(data: weatherData)
+            let id = json["current"]["condition"]["code"].intValue
+            let name = json["location"]["name"].stringValue
+            let temp = json["current"]["temp_c"].doubleValue
+            let humid = json["current"]["humidity"].intValue
             
             let weather = WeatherModel(conditionId: id, cityName: name, currentTemperature: temp, humidity: humid)
             let discomfortIndex = DiscomfortIndexModel(temperature: temp, humidity: humid)
@@ -60,7 +60,7 @@ struct WeatherManager {
             return (weather, discomfortIndex)
         } catch {
             delegate?.didFailWithError(error: error)
-            return (nil, nil)
+            return nil
         }
     }
     
