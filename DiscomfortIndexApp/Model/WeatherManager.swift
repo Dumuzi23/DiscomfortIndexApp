@@ -36,12 +36,17 @@ struct WeatherManager {
     
     func performRequest(with urlString: String) {
         AF.request(urlString, method: .get).responseJSON { response in
-            if let safeData = response.data {
-                if let weather = self.parseJSONforWeather(weatherData: safeData) {
-                    self.delegate?.didUpdateWeather(weatherManager: self, weather: weather.0, discomfortIndex: weather.1)
+            switch response.result {
+            case .success(_):
+                if let safeData = response.data {
+                    print("success")
+                    if let weather = self.parseJSONforWeather(weatherData: safeData) {
+                        self.delegate?.didUpdateWeather(weatherManager: self, weather: weather.0, discomfortIndex: weather.1)
+                    }
                 }
-            } else {
-                print("error")
+            case .failure(let error):
+                print("fail")
+                self.delegate?.didFailWithError(error: error)
             }
         }
     }
