@@ -11,16 +11,16 @@ import CoreLocation
 import Alamofire
 import SwiftyJSON
 
-protocol ForecastManagerDelegate {
+protocol ForecastManagerDelegate: class {
     func didUpdateForecast(forecastManager: ForecastManager, forecast: ForecastModel)
     func didFailWithError(error: Error)
 }
 
-struct ForecastManager {
+class ForecastManager {
     let weatherURL = "https://api.weatherapi.com/v1/forecast.json?days=2&"
     let apiKey = APIKey()
 
-    var delegate: ForecastManagerDelegate?
+    weak var delegate: ForecastManagerDelegate?
 
     func fetchForecast(cityName: String) {
         let urlString = "\(weatherURL)key=\(apiKey.key)&q=\(cityName)"
@@ -37,7 +37,7 @@ struct ForecastManager {
     func performRequest(with urlString: String) {
         AF.request(urlString, method: .get).responseJSON { response in
             switch response.result {
-            case .success(_):
+            case .success:
                 if let safeData = response.data {
                     if let forecast = self.parseJSONforForecast(forecastData: safeData) {
                         self.delegate?.didUpdateForecast(forecastManager: self, forecast: forecast)

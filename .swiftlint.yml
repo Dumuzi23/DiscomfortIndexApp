@@ -4,3 +4,7 @@ excluded:
 disabled_rules:
 - line_length
 - unused_optional_binding
+
+identifier_name:
+  min_length:
+    warning: 1
