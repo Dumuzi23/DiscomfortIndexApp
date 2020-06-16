@@ -14,8 +14,6 @@ struct DiscomfortIndexManager {
 
     var discomfortIndex: Double {
         let di = 0.81 * temperature + 0.01 * Double(humidity) * (0.99 * temperature - 14.3) + 46.3
-    }(temperature: Double, humidity: Double) -> Double {
-
         return di
     }
 
