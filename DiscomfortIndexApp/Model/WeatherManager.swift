@@ -39,13 +39,11 @@ class WeatherManager {
             switch response.result {
             case .success:
                 if let safeData = response.data {
-                    print("success")
                     if let weather = self.parseJSONforWeather(weatherData: safeData) {
                         self.delegate?.didUpdateWeather(weatherManager: self, weather: weather.0, discomfortIndex: weather.1)
                     }
                 }
             case .failure(let error):
-                print("fail")
                 self.delegate?.didFailWithError(error: error)
             }
         }

@@ -36,7 +36,6 @@ extension PageViewController: UIPageViewControllerDataSource {
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         if let index = self.controllers.firstIndex(of: viewController), index < self.controllers.count - 1 {
-            print(index)
             return self.controllers[index + 1]
         } else {
             return nil
