@@ -30,3 +30,26 @@ class WeatherModelTests: XCTestCase {
         }
     }
 }
+
+class ForecastModelTests: XCTestCase {
+
+    let forecastModel = ForecastModel(cityName: "sapporo", date: "2020-06-11", sixAMConditionId: 1000, nineAMConditionId: 1003, twelvePMConditionId: 1006, threePMConditionId: 1150, sixPMConditionId: 1114, ninePMConditionId: 1168, sixAMTemperature: 12.3, nineAMTemperature: 12.6, twelvePMTemperature: 0.0, threePMTemperature: 0.0, sixPMTemperature: 0.0, ninePMTemperature: 0.0)
+
+    func testFormattedDate() {
+        XCTContext.runActivity(named: "formattedDateのテスト") { _ in
+            XCTAssertEqual(forecastModel.formattedDate, "06/11")
+        }
+    }
+
+    func testTemperatureString() {
+
+        let floorTemperatureString = forecastModel.temperatureString(temp: forecastModel.sixAMTemperature)
+        let ceilTemperatureString = forecastModel.temperatureString(temp: forecastModel.nineAMTemperature)
+
+        XCTContext.runActivity(named: "temperatureStringのテスト") { _ in
+            XCTAssertEqual(floorTemperatureString, "12", "気温が小数点第一位で四捨五入され、String型になっていること")
+            XCTAssertEqual(ceilTemperatureString, "13", "気温が小数点第一位で四捨五入され、String型になっていること")
+        }
+    }
+
+}
