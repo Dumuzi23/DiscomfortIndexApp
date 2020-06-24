@@ -55,11 +55,13 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJi-bY-eaW">
                                                 <rect key="frame" x="60" y="0.0" width="215" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="weather_textfield"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qo-kp-i0Q">
                                                 <rect key="frame" x="285" y="1" width="50" height="48"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="weather_search_button"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="G75-cI-vhs"/>
                                                     <constraint firstAttribute="width" constant="50" id="tGF-Gw-nco"/>
@@ -74,6 +76,7 @@
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tokyo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV7-M3-mmU">
                                         <rect key="frame" x="119.5" y="65" width="96.5" height="42"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="weather_city_label"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -235,11 +238,13 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zyD-b0-uCN" userLabel="Search Text Field">
                                                                 <rect key="frame" x="60" y="0.0" width="215" height="50"/>
                                                                 <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <accessibility key="accessibilityConfiguration" identifier="forecast_textfield"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1A-b6-XFH">
                                                                 <rect key="frame" x="285" y="1" width="50" height="48"/>
+                                                                <accessibility key="accessibilityConfiguration" identifier="forecast_search_button"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="GNq-kL-Z6K"/>
                                                                     <constraint firstAttribute="width" constant="50" id="dIQ-K8-4kz"/>
@@ -257,12 +262,14 @@
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tokyo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbu-gT-kdg">
                                                 <rect key="frame" x="119.5" y="65" width="96.5" height="42"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="forecast_city_label"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ng1-hn-H7x">
                                                 <rect key="frame" x="129" y="122" width="77.5" height="36"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="forecast_day_label"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
