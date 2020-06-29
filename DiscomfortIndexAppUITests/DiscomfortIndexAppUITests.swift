@@ -10,34 +10,28 @@ import XCTest
 
 class DiscomfortIndexAppUITests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+    override func setUp() {
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        XCUIApplication().launch()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testWeather() {
         let app = XCUIApplication()
-        app.launch()
+        let searchTextField = app.textFields["weather_textfield"]
+        let searchButton = app.buttons["weather_search_button"]
+        let cityLabel = app.staticTexts["weather_city_label"]
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(searchTextField.exists)
+        XCTAssert(searchButton.exists)
+        XCTAssert(cityLabel.exists)
+        
+        searchTextField.tap()
+        searchTextField.typeText("sapporo")
+        searchButton.tap()
+
+        // 都市名ラベルが更新されるまでの待機時間として２秒を設定
+        sleep(2)
+        XCTAssertEqual(cityLabel.label, "Sapporo")
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
 }
