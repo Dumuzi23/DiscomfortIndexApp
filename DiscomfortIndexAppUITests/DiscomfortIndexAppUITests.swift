@@ -24,7 +24,7 @@ class DiscomfortIndexAppUITests: XCTestCase {
         XCTAssert(searchTextField.exists)
         XCTAssert(searchButton.exists)
         XCTAssert(cityLabel.exists)
-        
+
         searchTextField.tap()
         searchTextField.typeText("sapporo")
         searchButton.tap()
