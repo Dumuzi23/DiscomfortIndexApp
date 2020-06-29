@@ -19,13 +19,19 @@ class DiscomfortIndexAppUITests: XCTestCase {
         let app = XCUIApplication()
         let searchTextField = app.textFields["weather_textfield"]
         let searchButton = app.buttons["weather_search_button"]
-        let cityLabel = app.staticTexts["weather_city_label"].label
+        let cityLabel = app.staticTexts["weather_city_label"]
 
+        XCTAssert(searchTextField.exists)
+        XCTAssert(searchButton.exists)
+        XCTAssert(cityLabel.exists)
+        
         searchTextField.tap()
         searchTextField.typeText("sapporo")
         searchButton.tap()
 
-        XCTAssertEqual(cityLabel, "Sapporo")
+        // 都市名ラベルが更新されるまでの待機時間として２秒を設定
+        sleep(2)
+        XCTAssertEqual(cityLabel.label, "Sapporo")
     }
 
 }
