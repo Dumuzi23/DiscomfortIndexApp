@@ -162,6 +162,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="weather_view"/>
                         <constraints>
                             <constraint firstItem="rZS-Le-nkl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2vU-uF-tVm"/>
                             <constraint firstAttribute="bottom" secondItem="rZS-Le-nkl" secondAttribute="bottom" id="7rm-qE-ohw"/>
@@ -671,6 +672,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="forecast_view"/>
                         <constraints>
                             <constraint firstItem="OJg-Ak-d52" firstAttribute="leading" secondItem="G0C-Sh-BWb" secondAttribute="leading" id="3b5-ll-Ie7"/>
                             <constraint firstItem="fv6-W6-bk4" firstAttribute="leading" secondItem="e6a-Ft-hiE" secondAttribute="leading" id="D4R-ra-VCM"/>
