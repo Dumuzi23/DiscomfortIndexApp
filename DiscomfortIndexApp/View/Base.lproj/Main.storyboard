@@ -693,13 +693,10 @@
                         <outlet property="dayLabel" destination="Ng1-hn-H7x" id="kjo-Jm-opX"/>
                         <outlet property="fifthConditionImageView" destination="PqS-np-L05" id="eTF-RV-PVu"/>
                         <outlet property="fifthTemperatureLabel" destination="SQ8-Y3-ef5" id="u2c-wV-NdG"/>
-                        <outlet property="fifthTimeLabel" destination="W7X-wV-tJG" id="kLn-Ej-KsY"/>
                         <outlet property="firstConditionImageView" destination="lB3-ZN-KkZ" id="EVx-KZ-64X"/>
                         <outlet property="firstTemperatureLabel" destination="ZLU-3M-qAX" id="dNr-25-iUQ"/>
-                        <outlet property="firstTimeLabel" destination="Sco-Qh-WsG" id="Bb7-No-EEZ"/>
                         <outlet property="fourthConditionImageView" destination="Lm8-Mw-ROb" id="hlZ-2M-TvP"/>
                         <outlet property="fourthTemperatureLabel" destination="p1Z-bg-2bf" id="tRg-c8-dJc"/>
-                        <outlet property="fourthTimeLabel" destination="eJp-vN-QBb" id="mVh-Dh-dGy"/>
                         <outlet property="nineAMDIimageView" destination="fua-a4-avL" id="t6v-ce-L2H"/>
                         <outlet property="nineAMDIlabel" destination="Bax-t6-iWs" id="C7q-85-Zf4"/>
                         <outlet property="ninePMDIimageView" destination="Xku-ew-s2x" id="SPl-FU-xCQ"/>
@@ -707,17 +704,14 @@
                         <outlet property="searchTextField" destination="zyD-b0-uCN" id="m2C-A4-Ztq"/>
                         <outlet property="secondConditionImageView" destination="Mfq-Z3-PVP" id="NZs-UA-Mhm"/>
                         <outlet property="secondTemperatureLabel" destination="NsR-Vj-iPL" id="Joi-1j-BPW"/>
-                        <outlet property="secondTimeLabel" destination="Eqz-g7-M8b" id="rHD-Rc-jYc"/>
                         <outlet property="sixAMDIimageView" destination="ybO-su-skk" id="rW7-VH-YQy"/>
                         <outlet property="sixAMDIlabel" destination="Zcb-JK-1Ma" id="pES-bc-yil"/>
                         <outlet property="sixConditionImageView" destination="1w8-nC-Qed" id="tbs-w0-CLk"/>
                         <outlet property="sixPMDIimageView" destination="KEE-tB-hkN" id="Sds-NX-5iI"/>
                         <outlet property="sixPMDIlabel" destination="avx-X4-515" id="yf4-CF-ogg"/>
                         <outlet property="sixthTemperatureLabel" destination="cBj-br-foc" id="bZs-EQ-YX8"/>
-                        <outlet property="sixthTimeLabel" destination="HrV-0W-aVs" id="zw0-Yb-3kE"/>
                         <outlet property="thirdConditionImageView" destination="CPD-Jw-ZdB" id="Wat-bi-gks"/>
                         <outlet property="thirdTemperatureLabel" destination="iWb-tC-eu8" id="WPg-L6-uhj"/>
-                        <outlet property="thirdTimeLabel" destination="BsG-Pr-MXl" id="mrK-AS-rhM"/>
                         <outlet property="threePMDIimageView" destination="NSR-lJ-2yl" id="2KZ-MY-SkH"/>
                         <outlet property="threePMDIlabel" destination="r0s-hG-6zh" id="Q8y-sB-8lJ"/>
                         <outlet property="twelvePMDIimageView" destination="zkN-GE-2Ui" id="Eci-LC-1n2"/>
