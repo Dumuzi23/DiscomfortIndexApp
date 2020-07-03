@@ -14,32 +14,26 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var firstTimeLabel: UILabel!
     @IBOutlet weak var firstConditionImageView: UIImageView!
     @IBOutlet weak var sixAMDIimageView: UIImageView!
     @IBOutlet weak var sixAMDIlabel: UILabel!
     @IBOutlet weak var firstTemperatureLabel: UILabel!
-    @IBOutlet weak var secondTimeLabel: UILabel!
     @IBOutlet weak var secondConditionImageView: UIImageView!
     @IBOutlet weak var nineAMDIimageView: UIImageView!
     @IBOutlet weak var nineAMDIlabel: UILabel!
     @IBOutlet weak var secondTemperatureLabel: UILabel!
-    @IBOutlet weak var thirdTimeLabel: UILabel!
     @IBOutlet weak var thirdConditionImageView: UIImageView!
     @IBOutlet weak var twelvePMDIimageView: UIImageView!
     @IBOutlet weak var twelvePMDIlabel: UILabel!
     @IBOutlet weak var thirdTemperatureLabel: UILabel!
-    @IBOutlet weak var fourthTimeLabel: UILabel!
     @IBOutlet weak var fourthConditionImageView: UIImageView!
     @IBOutlet weak var threePMDIimageView: UIImageView!
     @IBOutlet weak var threePMDIlabel: UILabel!
     @IBOutlet weak var fourthTemperatureLabel: UILabel!
-    @IBOutlet weak var fifthTimeLabel: UILabel!
     @IBOutlet weak var fifthConditionImageView: UIImageView!
     @IBOutlet weak var sixPMDIimageView: UIImageView!
     @IBOutlet weak var sixPMDIlabel: UILabel!
     @IBOutlet weak var fifthTemperatureLabel: UILabel!
-    @IBOutlet weak var sixthTimeLabel: UILabel!
     @IBOutlet weak var sixConditionImageView: UIImageView!
     @IBOutlet weak var ninePMDIimageView: UIImageView!
     @IBOutlet weak var ninePMDIlabel: UILabel!
