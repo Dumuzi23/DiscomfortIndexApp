@@ -14,30 +14,30 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var firstConditionImageView: UIImageView!
+    @IBOutlet weak var sixAMConditionImageView: UIImageView!
     @IBOutlet weak var sixAMDIimageView: UIImageView!
     @IBOutlet weak var sixAMDIlabel: UILabel!
-    @IBOutlet weak var firstTemperatureLabel: UILabel!
-    @IBOutlet weak var secondConditionImageView: UIImageView!
+    @IBOutlet weak var sixAMTemperatureLabel: UILabel!
+    @IBOutlet weak var nineAMConditionImageView: UIImageView!
     @IBOutlet weak var nineAMDIimageView: UIImageView!
     @IBOutlet weak var nineAMDIlabel: UILabel!
-    @IBOutlet weak var secondTemperatureLabel: UILabel!
-    @IBOutlet weak var thirdConditionImageView: UIImageView!
+    @IBOutlet weak var nineAMTemperatureLabel: UILabel!
+    @IBOutlet weak var twelvePMConditionImageView: UIImageView!
     @IBOutlet weak var twelvePMDIimageView: UIImageView!
     @IBOutlet weak var twelvePMDIlabel: UILabel!
-    @IBOutlet weak var thirdTemperatureLabel: UILabel!
-    @IBOutlet weak var fourthConditionImageView: UIImageView!
+    @IBOutlet weak var twelvePMTemperatureLabel: UILabel!
+    @IBOutlet weak var threePMConditionImageView: UIImageView!
     @IBOutlet weak var threePMDIimageView: UIImageView!
     @IBOutlet weak var threePMDIlabel: UILabel!
-    @IBOutlet weak var fourthTemperatureLabel: UILabel!
-    @IBOutlet weak var fifthConditionImageView: UIImageView!
+    @IBOutlet weak var threePMTemperatureLabel: UILabel!
+    @IBOutlet weak var sixPMConditionImageView: UIImageView!
     @IBOutlet weak var sixPMDIimageView: UIImageView!
     @IBOutlet weak var sixPMDIlabel: UILabel!
-    @IBOutlet weak var fifthTemperatureLabel: UILabel!
-    @IBOutlet weak var sixConditionImageView: UIImageView!
+    @IBOutlet weak var sixPMTemperatureLabel: UILabel!
+    @IBOutlet weak var ninePMConditionImageView: UIImageView!
     @IBOutlet weak var ninePMDIimageView: UIImageView!
     @IBOutlet weak var ninePMDIlabel: UILabel!
-    @IBOutlet weak var sixthTemperatureLabel: UILabel!
+    @IBOutlet weak var ninePMTemperatureLabel: UILabel!
 
     var forecastManager = ForecastManager()
     let locationManager = CLLocationManager()
@@ -95,18 +95,18 @@ extension ForecastViewController: ForecastManagerDelegate {
         DispatchQueue.main.async {
             self.cityLabel.text = forecast.cityName
             self.dayLabel.text = forecast.formattedDate
-            self.firstConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.sixAMConditionId))
-            self.firstTemperatureLabel.text = forecast.temperatureString(temp: forecast.sixAMTemperature)
-            self.secondConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.nineAMConditionId))
-            self.secondTemperatureLabel.text = forecast.temperatureString(temp: forecast.nineAMTemperature)
-            self.thirdConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.twelvePMConditionId))
-            self.thirdTemperatureLabel.text = forecast.temperatureString(temp: forecast.twelvePMTemperature)
-            self.fourthConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.threePMConditionId))
-            self.fourthTemperatureLabel.text = forecast.temperatureString(temp: forecast.threePMTemperature)
-            self.fifthConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.sixPMConditionId))
-            self.fifthTemperatureLabel.text = forecast.temperatureString(temp: forecast.sixPMTemperature)
-            self.sixConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.ninePMConditionId))
-            self.sixthTemperatureLabel.text = forecast.temperatureString(temp: forecast.ninePMTemperature)
+            self.sixAMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.sixAMConditionId))
+            self.sixAMTemperatureLabel.text = forecast.temperatureString(temp: forecast.sixAMTemperature)
+            self.nineAMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.nineAMConditionId))
+            self.nineAMTemperatureLabel.text = forecast.temperatureString(temp: forecast.nineAMTemperature)
+            self.twelvePMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.twelvePMConditionId))
+            self.twelvePMTemperatureLabel.text = forecast.temperatureString(temp: forecast.twelvePMTemperature)
+            self.threePMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.threePMConditionId))
+            self.threePMTemperatureLabel.text = forecast.temperatureString(temp: forecast.threePMTemperature)
+            self.sixPMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.sixPMConditionId))
+            self.sixPMTemperatureLabel.text = forecast.temperatureString(temp: forecast.sixPMTemperature)
+            self.ninePMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.ninePMConditionId))
+            self.ninePMTemperatureLabel.text = forecast.temperatureString(temp: forecast.ninePMTemperature)
         }
     }
 
