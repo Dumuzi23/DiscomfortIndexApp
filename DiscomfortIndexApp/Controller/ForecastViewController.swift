@@ -91,22 +91,26 @@ extension ForecastViewController: UITextFieldDelegate {
 
 extension ForecastViewController: ForecastManagerDelegate {
 
-    func didUpdateForecast(forecastManager: ForecastManager, forecast: ForecastModel) {
+    func didUpdateForecast(forecastManager: ForecastManager, forecast: [ForecastModel], discomfortIndex: [DiscomfortIndexModel]) {
         DispatchQueue.main.async {
-            self.cityLabel.text = forecast.cityName
-            self.dayLabel.text = forecast.formattedDate
-            self.sixAMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.sixAMConditionId))
-            self.sixAMTemperatureLabel.text = forecast.temperatureString(temp: forecast.sixAMTemperature)
-            self.nineAMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.nineAMConditionId))
-            self.nineAMTemperatureLabel.text = forecast.temperatureString(temp: forecast.nineAMTemperature)
-            self.twelvePMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.twelvePMConditionId))
-            self.twelvePMTemperatureLabel.text = forecast.temperatureString(temp: forecast.twelvePMTemperature)
-            self.threePMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.threePMConditionId))
-            self.threePMTemperatureLabel.text = forecast.temperatureString(temp: forecast.threePMTemperature)
-            self.sixPMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.sixPMConditionId))
-            self.sixPMTemperatureLabel.text = forecast.temperatureString(temp: forecast.sixPMTemperature)
-            self.ninePMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.ninePMConditionId))
-            self.ninePMTemperatureLabel.text = forecast.temperatureString(temp: forecast.ninePMTemperature)
+            self.cityLabel.text = forecast[0].cityName
+            self.dayLabel.text = forecast[0].formattedDate
+            self.sixAMConditionImageView.image = UIImage(systemName: forecast[0].conditionName)
+            self.sixAMDIimageView.image = UIImage(named: discomfortIndex[0].discomfortIndexImage)
+            self.sixAMDIlabel.text = discomfortIndex[0].discomfortIndexName
+            self.sixAMTemperatureLabel.text = forecast[0].temperatureString
+
+
+//            self.nineAMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.nineAMConditionId))
+//            self.nineAMTemperatureLabel.text = forecast.temperatureString(temp: forecast.nineAMTemperature)
+//            self.twelvePMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.twelvePMConditionId))
+//            self.twelvePMTemperatureLabel.text = forecast.temperatureString(temp: forecast.twelvePMTemperature)
+//            self.threePMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.threePMConditionId))
+//            self.threePMTemperatureLabel.text = forecast.temperatureString(temp: forecast.threePMTemperature)
+//            self.sixPMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.sixPMConditionId))
+//            self.sixPMTemperatureLabel.text = forecast.temperatureString(temp: forecast.sixPMTemperature)
+//            self.ninePMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.ninePMConditionId))
+//            self.ninePMTemperatureLabel.text = forecast.temperatureString(temp: forecast.ninePMTemperature)
         }
     }
 

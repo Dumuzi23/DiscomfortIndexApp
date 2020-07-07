@@ -11,18 +11,9 @@ import Foundation
 struct ForecastModel {
     let cityName: String
     let date: String
-    let sixAMConditionId: Int
-    let nineAMConditionId: Int
-    let twelvePMConditionId: Int
-    let threePMConditionId: Int
-    let sixPMConditionId: Int
-    let ninePMConditionId: Int
-    let sixAMTemperature: Double
-    let nineAMTemperature: Double
-    let twelvePMTemperature: Double
-    let threePMTemperature: Double
-    let sixPMTemperature: Double
-    let ninePMTemperature: Double
+    let conditionId: Int
+    let temperature: Double
+    let humidity: Int
 
     var formattedDate: String {
         if date == "" {
@@ -33,12 +24,16 @@ struct ForecastModel {
         }
     }
 
-    func temperatureString(temp: Double) -> String {
-        let temperatureInt = Int(round(temp))
+    var temperatureString: String {
+        let temperatureInt = Int((round(temperature)))
         return String(temperatureInt)
     }
 
-    func judgeConditionName(conditionId: Int) -> String {
+    var humidityString: String {
+        return String(humidity)
+    }
+
+    var conditionName: String {
         switch conditionId {
         case 1000:
             return "sun.max"
