@@ -73,8 +73,19 @@ class ForecastManager {
             let ninePMTemperature = json["forecast"]["forecastday"][1]["hour"][21]["temp_c"].doubleValue
             let ninePMHumidity = json["forecast"]["forecastday"][1]["hour"][21]["humidity"].intValue
 
-            let forecastList = [ForecastModel(cityName: name, date: date, conditionId: sixAMWeatherId, temperature: sixAMTemperature, humidity: sixAMHumidity)]
-            let discomfortIndexList = [DiscomfortIndexModel(temperature: sixAMTemperature, humidity: sixAMHumidity)]
+            let forecastList = [ForecastModel(cityName: name, date: date, conditionId: sixAMWeatherId, temperature: sixAMTemperature, humidity: sixAMHumidity),
+            ForecastModel(cityName: name, date: date, conditionId: nineAMWeatherId, temperature: nineAMTemperature, humidity: nineAMHumidity),
+            ForecastModel(cityName: name, date: date, conditionId: twelvePMWeatherId, temperature: twelvePMTemperature, humidity: twelvePMHumidity),
+            ForecastModel(cityName: name, date: date, conditionId: threePMWeatherId, temperature: threePMTemperature, humidity: threePMHumidity),
+            ForecastModel(cityName: name, date: date, conditionId: sixPMWeatherId, temperature: sixPMTemperature, humidity: sixPMHumidity),
+            ForecastModel(cityName: name, date: date, conditionId: ninePMWeatherId, temperature: ninePMTemperature, humidity: ninePMHumidity)]
+
+            let discomfortIndexList = [DiscomfortIndexModel(temperature: sixAMTemperature, humidity: sixAMHumidity),
+            DiscomfortIndexModel(temperature: nineAMTemperature, humidity: nineAMHumidity),
+            DiscomfortIndexModel(temperature: twelvePMTemperature, humidity: twelvePMHumidity),
+            DiscomfortIndexModel(temperature: threePMTemperature, humidity: threePMHumidity),
+            DiscomfortIndexModel(temperature: sixPMTemperature, humidity: sixPMHumidity),
+            DiscomfortIndexModel(temperature: ninePMTemperature, humidity: ninePMHumidity)]
 
             return (forecastList, discomfortIndexList)
         } catch {

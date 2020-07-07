@@ -99,18 +99,26 @@ extension ForecastViewController: ForecastManagerDelegate {
             self.sixAMDIimageView.image = UIImage(named: discomfortIndex[0].discomfortIndexImage)
             self.sixAMDIlabel.text = discomfortIndex[0].discomfortIndexName
             self.sixAMTemperatureLabel.text = forecast[0].temperatureString
-
-
-//            self.nineAMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.nineAMConditionId))
-//            self.nineAMTemperatureLabel.text = forecast.temperatureString(temp: forecast.nineAMTemperature)
-//            self.twelvePMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.twelvePMConditionId))
-//            self.twelvePMTemperatureLabel.text = forecast.temperatureString(temp: forecast.twelvePMTemperature)
-//            self.threePMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.threePMConditionId))
-//            self.threePMTemperatureLabel.text = forecast.temperatureString(temp: forecast.threePMTemperature)
-//            self.sixPMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.sixPMConditionId))
-//            self.sixPMTemperatureLabel.text = forecast.temperatureString(temp: forecast.sixPMTemperature)
-//            self.ninePMConditionImageView.image = UIImage(systemName: forecast.judgeConditionName(conditionId: forecast.ninePMConditionId))
-//            self.ninePMTemperatureLabel.text = forecast.temperatureString(temp: forecast.ninePMTemperature)
+            self.nineAMConditionImageView.image = UIImage(systemName: forecast[1].conditionName)
+            self.nineAMDIimageView.image = UIImage(named: discomfortIndex[1].discomfortIndexImage)
+            self.nineAMDIlabel.text = discomfortIndex[1].discomfortIndexName
+            self.nineAMTemperatureLabel.text = forecast[1].temperatureString
+            self.twelvePMConditionImageView.image = UIImage(systemName: forecast[2].conditionName)
+            self.twelvePMDIimageView.image = UIImage(named: discomfortIndex[2].discomfortIndexImage)
+            self.twelvePMDIlabel.text = discomfortIndex[2].discomfortIndexName
+            self.twelvePMTemperatureLabel.text = forecast[2].temperatureString
+            self.threePMConditionImageView.image = UIImage(systemName: forecast[3].conditionName)
+            self.threePMDIimageView.image = UIImage(named: discomfortIndex[3].discomfortIndexImage)
+            self.threePMDIlabel.text = discomfortIndex[3].discomfortIndexName
+            self.threePMTemperatureLabel.text = forecast[3].temperatureString
+            self.sixPMConditionImageView.image = UIImage(systemName: forecast[4].conditionName)
+            self.sixPMDIimageView.image = UIImage(named: discomfortIndex[4].discomfortIndexImage)
+            self.sixPMDIlabel.text = discomfortIndex[4].discomfortIndexName
+            self.sixPMTemperatureLabel.text = forecast[4].temperatureString
+            self.ninePMConditionImageView.image = UIImage(systemName: forecast[5].conditionName)
+            self.ninePMDIimageView.image = UIImage(named: discomfortIndex[5].discomfortIndexImage)
+            self.ninePMDIlabel.text = discomfortIndex[5].discomfortIndexName
+            self.ninePMTemperatureLabel.text = forecast[5].temperatureString
         }
     }
 
