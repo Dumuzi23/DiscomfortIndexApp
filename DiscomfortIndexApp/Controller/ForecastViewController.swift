@@ -122,6 +122,23 @@ extension ForecastViewController: ForecastManagerDelegate {
         }
     }
 
+    func didUpdateFailResult() {
+        cityLabel.text = "Error"
+        dayLabel.text = "*****"
+        sixAMDIlabel.text = "Error"
+        sixAMTemperatureLabel.text = "*"
+        nineAMDIlabel.text = "Error"
+        nineAMTemperatureLabel.text = "*"
+        twelvePMDIlabel.text = "Error"
+        twelvePMTemperatureLabel.text = "*"
+        threePMDIlabel.text = "Error"
+        threePMTemperatureLabel.text = "*"
+        sixPMDIlabel.text = "Error"
+        sixPMTemperatureLabel.text = "*"
+        ninePMDIlabel.text = "Error"
+        ninePMTemperatureLabel.text = "*"
+    }
+
     func didFailWithError(error: Error) {
         print(error)
     }

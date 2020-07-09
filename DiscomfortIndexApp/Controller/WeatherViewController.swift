@@ -81,6 +81,13 @@ extension WeatherViewController: WeatherManagerDelegate {
         }
     }
 
+    func didUpdateFailResult() {
+        cityLabel.text = "Error"
+        discomfortIndexLabel.text = "Error"
+        temperatureLabel.text = "*"
+        humidityLabel.text = "*"
+    }
+
     func didFailWithError(error: Error) {
         print(error)
     }
