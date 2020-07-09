@@ -13,6 +13,7 @@ import SwiftyJSON
 
 protocol ForecastManagerDelegate: class {
     func didUpdateForecast(forecastManager: ForecastManager, forecast: [ForecastModel], discomfortIndex: [DiscomfortIndexModel])
+    func didUpdateFailResult()
     func didFailWithError(error: Error)
 }
 
@@ -38,13 +39,19 @@ class ForecastManager {
         AF.request(urlString, method: .get).responseJSON { response in
             switch response.result {
             case .success:
-                if let safeData = response.data {
-                    if let forecast = self.parseJSONforForecast(forecastData: safeData) {
-                        self.delegate?.didUpdateForecast(forecastManager: self, forecast: forecast.0, discomfortIndex: forecast.1)
+                let statusCode = response.response?.statusCode
+                if statusCode == 200 {
+                    if let safeData = response.data {
+                        if let forecast = self.parseJSONforForecast(forecastData: safeData) {
+                            self.delegate?.didUpdateForecast(forecastManager: self, forecast: forecast.0, discomfortIndex: forecast.1)
+                        }
                     }
+                } else {
+                    self.delegate?.didUpdateFailResult()
                 }
             case .failure(let error):
                 self.delegate?.didFailWithError(error: error)
+                self.delegate?.didUpdateFailResult()
             }
         }
     }

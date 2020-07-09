@@ -13,6 +13,7 @@ import SwiftyJSON
 
 protocol WeatherManagerDelegate: class {
     func didUpdateWeather(weatherManager: WeatherManager, weather: WeatherModel, discomfortIndex: DiscomfortIndexModel)
+    func didUpdateFailResult()
     func didFailWithError(error: Error)
 }
 
@@ -38,13 +39,19 @@ class WeatherManager {
         AF.request(urlString, method: .get).responseJSON { response in
             switch response.result {
             case .success:
-                if let safeData = response.data {
-                    if let weather = self.parseJSONforWeather(weatherData: safeData) {
-                        self.delegate?.didUpdateWeather(weatherManager: self, weather: weather.0, discomfortIndex: weather.1)
+                let statusCode = response.response?.statusCode
+                if statusCode == 200 {
+                    if let safeData = response.data {
+                        if let weather = self.parseJSONforWeather(weatherData: safeData) {
+                            self.delegate?.didUpdateWeather(weatherManager: self, weather: weather.0, discomfortIndex: weather.1)
+                        }
                     }
+                } else {
+                    self.delegate?.didUpdateFailResult()
                 }
             case .failure(let error):
                 self.delegate?.didFailWithError(error: error)
+                self.delegate?.didUpdateFailResult()
             }
         }
     }
