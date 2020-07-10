@@ -196,7 +196,7 @@
         <!--Forecast View Controller-->
         <scene sceneID="5Mf-Ee-rNc">
             <objects>
-                <viewController storyboardIdentifier="3daysWeatherView" id="mQ4-6E-4Oe" customClass="ForecastViewController" customModule="DiscomfortIndexApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForecastView" id="mQ4-6E-4Oe" customClass="ForecastViewController" customModule="DiscomfortIndexApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G0C-Sh-BWb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
