@@ -18,10 +18,10 @@ class PageViewController: UIPageViewController {
     }
 
     func initPageViewController() {
-        let firstVC = storyboard!.instantiateViewController(withIdentifier: "WeatherView")
-        let secondVC = storyboard!.instantiateViewController(withIdentifier: "3daysWeatherView")
+        let weatherVC = storyboard!.instantiateViewController(withIdentifier: "WeatherView")
+        let forecastVC = storyboard!.instantiateViewController(withIdentifier: "ForecastView")
 
-        self.controllers = [firstVC, secondVC]
+        self.controllers = [weatherVC, forecastVC]
 
         setViewControllers([self.controllers[0]], direction: .forward, animated: true, completion: nil)
 
