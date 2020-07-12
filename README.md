@@ -20,7 +20,8 @@
 - .gitignoreを使用したAPIキーの運用
 
 ## 📚 Requirement
-
+- Swift 5.2+
+- Xcode 11.5+
 ## 📃 Usage
 
 ## ⚠️ Note
