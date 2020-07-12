@@ -6,7 +6,7 @@
   
 ## 🎥 Demo
 #### 現在の天気  
-![currentWeather](../media/DiscomfortIndexApp/media/currentWeather.gif)  
+![weather](../media/DiscomfortIndexApp/media/weather.gif)  
   
 #### 明日の天気
 ![forecst](../media/DiscomfortIndexApp/media/forecast.gif)
